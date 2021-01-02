@@ -274,6 +274,10 @@
     .kotak-iklan img { background : #ebf5f9; margin : auto; text-align : center; width : 100%; height : 80px; }
     .kotak-iklan img:hover { background : #fff; }
 
+    .main_blog_details .user_details {
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
     .sti {
       z-index: 1999;
       width: 100%;
@@ -290,10 +294,10 @@
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
       border-left: 10px solid #41beae;
       font-family: 'Raleway';
-      display: none;
+      /*display: none;*/
     }
 
-    .sticky {
+/*    .sticky {
       display: inline-block;
       z-index: 1;
       animation:slide-down 0.5s;
@@ -312,7 +316,7 @@
         opacity: 0.6;
         transform: translateY(0);
       }
-    }
+    }*/
 
     .stiki{
       font-size: 20px !important;
@@ -377,16 +381,16 @@
             <a href="<?= site_url('L_Page') ?>" style="color: grey;" class="nav-link scroll">Home</a>
           </li>
           <li class="nav-item">
-            <a href="<?= site_url('L_Page/Disclaimer') ?>" style="color: grey;" class="nav-link scroll">Disclaimer</a>
+            <a href="#" style="color: grey;" class="nav-link scroll">Disclaimer</a>
           </li>
           <li class="nav-item">
-            <a href="<?= site_url('L_Page/Privacy') ?>" style="color: grey;" class="nav-link scroll">Privacy Policy</a>
+            <a href="#" style="color: grey;" class="nav-link scroll">Privacy Policy</a>
           </li>
           <li class="nav-item">
-            <a href="<?= site_url('L_Page/Contact') ?>" style="color: grey;" class="nav-link scroll">Contact</a>
+            <a href="#" style="color: grey;" class="nav-link scroll">Contact</a>
           </li>
           <li class="nav-item">
-            <a href="<?= site_url('L_Page/About') ?>" style="color: grey;" class="nav-link scroll">About</a>
+            <a href="#" style="color: grey;" class="nav-link scroll">About</a>
           </li>
         </ul>
       </div>
