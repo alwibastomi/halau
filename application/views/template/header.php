@@ -270,7 +270,7 @@
     .nav-link:focus{
       color: #53bedb !important;
     }
-    .kotak-iklan { background : #ddd; text-align : center; border-radius : 4px; padding : 1px; }
+    .kotak-iklan{ background : #ddd; text-align : center; border-radius : 4px; padding : 1px; }
     .kotak-iklan img { background : #ebf5f9; margin : auto; text-align : center; width : 100%; height : 80px; }
     .kotak-iklan img:hover { background : #fff; }
 
@@ -278,6 +278,7 @@
       overflow: hidden;
       margin-bottom: 30px;
     }
+
     .sti {
       z-index: 1999;
       width: 100%;
@@ -295,6 +296,11 @@
       border-left: 10px solid #41beae;
       font-family: 'Raleway';
       /*display: none;*/
+    }
+
+    .papa{
+      transition: .2s;
+      opacity: 0;
     }
 
 /*    .sticky {
@@ -334,11 +340,17 @@
       }
 
       @media screen and (max-width: 845px){
+        #lolo{
+          display: none;
+        }
         .stiki{
           font-size: 50px;
         }
       }
       @media screen and (max-width: 768px){
+        #lolo{
+          display: none;
+        }
         .sticky {
           z-index: 1999;
           padding-top: 5px;
@@ -353,12 +365,25 @@
           font-size: 15px !important;
         }
       }
-      
-      .navbar-brand:hover{
-        opacity: 0.6;
-        text-shadow: 5px 5px 5px grey;
-        transition: .3s;
+
+      @media screen and (max-width: 1140px){
+        #lolo{
+          display: none;
+        }
       }
+
+      #lolo{
+        height: 70%;
+        width: 25%;
+        margin-top: 20px;
+        position: fixed;
+      }
+
+      /*.navbar-brand:hover{
+        opacity: 0.6;
+        text-shadow: 5px 5px 5px;
+        transition: .2s;
+      }*/
 
     </style>
   </head>

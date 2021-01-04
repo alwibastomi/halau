@@ -68,6 +68,22 @@
 </script>
 
 <script>
+  window.onscroll = function() {myFunction()};
+
+  var header = document.getElementById("lolo");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    var winTop = $(window).scrollTop();
+    if(winTop >= 1350){
+      header.classList.add("papa");
+    } else {
+      header.classList.remove("papa");
+    }
+  }
+</script>
+
+<script>
   $(document).ready(function () {
     $(".basicDate").flatpickr({
       enableTime: false,

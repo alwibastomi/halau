@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-4 order-xl-last">
-      <div class="kotak-iklan" style="height: 95%; margin-top: 20px;">
+      <div class="kotak-iklan" id="lolo" style="">
         <a href="" title="Pasang Iklan">
           <img alt="iklan banner" style="height: 100%;" src=""/>
         </a>
@@ -70,11 +70,11 @@
       <div class="row">
         <div class="col-xl-4 order-xl-last">
           <!-- iklan -->
-          <div class="kotak-iklan" style="height: 90%; margin-top: 20px;">
+          <!-- <div class="kotak-iklan" style="height: 90%; margin-top: 20px;">
             <a href="" title="Pasang Iklan">
               <img alt="iklan banner" style="height: 100%;" src=""/>
             </a>
-          </div>
+          </div> -->
           <!-- iklan -->
         </div>
         <div class="col-xl-8 order-xl-first">
