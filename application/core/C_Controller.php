@@ -20,4 +20,10 @@ class Core extends CI_Controller {
 		$this->load->view($view, $datas);
 		$this->load->view('template/footer');
 	}
+	public function renderlog($view,$data = array()){
+		$this->load->view('template/auth_header',$data);
+		$this->load->view($view,$data);
+		$this->load->view('template/auth_footer');
+	}
+	
 }
