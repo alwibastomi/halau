@@ -25,5 +25,13 @@ class Core extends CI_Controller {
 		$this->load->view($view,$data);
 		$this->load->view('template/auth_footer');
 	}
+
+	public function renderadm($view,$data = array()){
+		$this->load->view('templates/header',$data);
+		$this->load->view('templates/sidebar');
+		$this->load->view('templates/topbar');
+		$this->load->view($view,$data);
+		$this->load->view('templates/footer');
+	}
 	
 }

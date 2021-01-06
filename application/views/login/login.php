@@ -11,7 +11,7 @@
                     <div class="card-body p-0 ">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image mt-3 mb-2"><img class="img-fluid bg-login" src="<?= base_url('images'); ?>/login/login.jpg"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login  mt-3 mb-2"><img class="img-fluid" src="<?= base_url('images'); ?>/login/login.jpg"></div>
                             <div class="col-lg-6">
                                 <div class="p-5 mt-3">
                                     <div class="text-center">
@@ -39,9 +39,6 @@
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="<?= base_url('auth')?>/registration">Create an Account!</a>
                                     </div>
                                     
                                 </div>

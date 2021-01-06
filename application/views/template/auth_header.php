@@ -39,6 +39,7 @@
     .small:hover{
         color: #253137;
     }
+    
     </style>
 
 </head>
