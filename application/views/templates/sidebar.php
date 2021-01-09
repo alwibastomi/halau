@@ -13,8 +13,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item <?php if($this->uri->segment(1)=="admin"){echo "active";}?>" >
-                <a class="nav-link" href="<?= base_url('admin') ?>">
+            <li class="nav-item <?php if($this->uri->segment(2)=="dashboard"){echo "active";}?>" >
+                <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -28,8 +28,8 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if($this->uri->segment(1)=="penulis"){echo "active";}?>">
-                <a class="nav-link " href="<?= base_url('penulis') ?>">
+            <li class="nav-item <?php if($this->uri->segment(2)=="penulis"){echo "active";}?>">
+                <a class="nav-link " href="<?= base_url('admin/penulis') ?>">
                     <i class="fas fa-fw fa-pen-alt"></i>
                     <span>Tambah Penulis</span></a>
             </li>
@@ -56,8 +56,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item <?php if($this->uri->segment(2)=="artikel"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('admin/artikel') ?>">
                     <i class="fas fa-fw fa-file-alt"></i>
                     <span>Artikel</span></a>
             </li>

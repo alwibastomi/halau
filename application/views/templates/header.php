@@ -12,19 +12,43 @@
     <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?= base_url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets') ?>/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets')?>/vendor/datatables/dataTables.bootstrap4.min.css">
     <link href="<?= base_url('assets') ?>/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    
+
     <style type="text/css">
         .bg-gradient-primary{
              background-color: #253137 !important;
               background-image: linear-gradient(180deg, #253137 10%, #253137 100%);
               background-size: cover;
         }
+        .tablehead{
+            background-color: white;
+            color: black;
+
+        }
+        .sorting{
+            margin-left: -200px;
+        }
+        .text-center{
+            color: black;
+            font-weight: 500;
+        }
+        #tableku_filter{
+            width: 80%;
+        }
+        #tableku_filter input{
+            width: 200px;
+        }
+
     </style>
     
 

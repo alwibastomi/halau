@@ -41,16 +41,75 @@
     </div>
 
 
+   <!--  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script> -->
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
 
     <script src="<?= base_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script>
+        $(document).ready(function(){
+            $('#tableku').DataTable({
+                "processing" : true,
+                "serverSide" : true,
+                "order" :[],
+                "ajax" : {
+                    "url" : "<?= base_url('admin/getData'); ?>",
+                    "type" : "POST"
+                },
+                "columnDefs":[{
+                        "target" :[0],
+                        "orderable" :false,
+                    }],
+            });
+        });
+
+
+       
+            $(document).ready(function() {
+                $('.tablehead').DataTable({
+                    "language" :{
+                       "sEmptyTable":    "Tidak Ada Data",
+                        "sProcessing":   "Sedang memproses...",
+                        "sLengthMenu":   "Tampilkan _MENU_  data",
+                        "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+                        "sInfo":         "_END_ data dari total _TOTAL_ data",
+                        "sInfoEmpty":    "0 data",
+                        "sInfoFiltered": "(disaring dari _MAX_ data)",
+                        "sInfoPostFix":  "",
+                        "sSearch":       "Cari:",
+                        "sUrl":          "",
+                        "oPaginate": {
+                          "sFirst":    "Pertama",
+                          "sPrevious": "Kembali",
+                          "sNext":     "lanjut",
+                          "sLast":     "Terakhir"
+                        }
+
+                    }
+
+                });
+
+            } );
+             
+
+
+    </script>
+        
+  
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url('assets') ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets') ?>/js/sb-admin-2.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets')?>/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets')?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+
 
     
    
