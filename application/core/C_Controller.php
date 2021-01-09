@@ -9,7 +9,7 @@ class Core extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url','form');
 		$this->load->library(array('form_validation'));
-		$this->load->model(array(''));
+		$this->load->model(array('user_model'));
 
 		$this->isLogin = $this->session->userdata('isLogin');
 	}

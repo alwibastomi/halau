@@ -1,6 +1,10 @@
-
-
-    <div class="container">
+<?php 
+if ($alert == 'gagal') { ?>
+    <script type="text/javascript">
+        alert('Maaf kamu terlalu baik buatku :(')
+    </script>
+<?php }?>
+<div class="container">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
