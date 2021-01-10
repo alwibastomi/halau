@@ -16,6 +16,10 @@ class Core extends CI_Controller {
 
 	public function renderpage($view, $datas = array())
 	{
+
+		$data['nama'] = $this->session->userdata('namanama');
+		$data['email'] = $this->session->userdata('email');
+		$data['level'] = $this->session->userdata('level');
 		$this->load->view('template/header');
 		$this->load->view($view, $datas);
 		$this->load->view('template/footer');

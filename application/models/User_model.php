@@ -61,7 +61,7 @@ class User_model extends CI_Model
         $data = array(
           'isLogin' => true,
           'email' => $query->email,
-          'nama_lengkap' => $query->nama_lengkap,
+          'nama' => $query->nama,
           'level' => $level
         );
         $this->session->set_userdata($data);

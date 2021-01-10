@@ -7,14 +7,26 @@ class Admin extends Core {
 	}
 
 	public function dashboard(){
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Halaman Admin';
 		$this->renderadm('admin/dashboard',$data);
 	}
-	public function artikel(){
+	public function artikel(){		
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Artikel';
 		$this->renderadm('admin/artikel',$data);
 	}
 	public function penulis(){
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Penulis';
 		$this->renderadm('admin/penulis',$data);
 	}
@@ -28,8 +40,8 @@ class Admin extends Core {
 			$row[] = ++$no;
 			$row[] = $r->isi;
 			$row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit('."'".$r->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete('."'".$r->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                  <a class="btn btn-sm btn-success" href="javascript:void(0)" title="Detail" onclick="detail('."'".$r->id."'".')"><i class="glyphicon glyphicon-trash"></i> Detail</a>';
+			<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete('."'".$r->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+			<a class="btn btn-sm btn-success" href="javascript:void(0)" title="Detail" onclick="detail('."'".$r->id."'".')"><i class="glyphicon glyphicon-trash"></i> Detail</a>';
 			$data[] = $row;
 
 		}
