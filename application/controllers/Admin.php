@@ -15,10 +15,10 @@ class Admin extends Core {
 		$this->renderadm('admin/dashboard',$data);
 	}
 	public function artikel(){		
-		// if(!$this->isLogin){
-		// 	redirect('Login');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Artikel';
 		$this->renderadm('admin/artikel',$data);
 	}
@@ -31,18 +31,18 @@ class Admin extends Core {
 		$this->renderadm('admin/penulis',$data);
 	}
 	public function menu(){
-		// if(!$this->isLogin){
-		// 	redirect('Login');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Menu & href';
 		$this->renderadm('admin/menu',$data);
 	}
 	public function activiti(){
-		// if(!$this->isLogin){
-		// 	redirect('Login');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Activiti Log';
 		$this->renderadm('admin/activiti',$data);
 	}
