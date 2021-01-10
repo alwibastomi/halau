@@ -48,6 +48,11 @@
         #tableku_filter input{
             width: 200px;
         }
+        .btn-tambah{
+            background-color: #0b0c1f;
+            border-radius: 0 !important;
+            border: none;
+        }
 
     </style>
     

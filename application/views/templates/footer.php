@@ -52,7 +52,7 @@
     
     <script>
         $(document).ready(function(){
-            $('#tableku').DataTable({
+            $('#tablepenulis').DataTable({
                 "processing" : true,
                 "serverSide" : true,
                 "order" :[],
@@ -66,6 +66,37 @@
                     }],
             });
         });
+        $(document).ready(function(){
+            $('#tablemenu').DataTable({
+                "processing" : true,
+                "serverSide" : true,
+                "order" :[],
+                "ajax" : {
+                    "url" : "<?= base_url('admin/getDataMenu'); ?>",
+                    "type" : "POST"
+                },
+                "columnDefs":[{
+                        "target" :[0],
+                        "orderable" :false,
+                    }],
+            });
+        });
+
+    $(document).ready(function(){
+                $('#tableactiviti').DataTable({
+                    "processing" : true,
+                    "serverSide" : true,
+                    "order" :[],
+                    "ajax" : {
+                        "url" : "<?= base_url('admin/getDataActiviti'); ?>",
+                        "type" : "POST"
+                    },
+                    "columnDefs":[{
+                            "target" :[0],
+                            "orderable" :false,
+                        }],
+                });
+            });
 
 
        

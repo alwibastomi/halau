@@ -35,8 +35,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item <?php if($this->uri->segment(2)=="activiti"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('admin/activiti') ?>">
                     <i class="fas fa-fw fa-user-clock"></i>
                     <span>Activity Log</span></a>
             </li>
@@ -49,8 +49,8 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+            <li class="nav-item <?php if($this->uri->segment(2)=="menu"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('admin/menu') ?>">
                     <i class="fas fa-fw fa-folder-plus"></i>
                     <span>Menu & Href</span></a>
             </li>

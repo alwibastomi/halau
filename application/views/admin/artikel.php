@@ -10,11 +10,12 @@
                             <div class="card-body">
 
                               <h3 class="text-center">Artikel</h3>
-                           <table id="tableku" class="table tablehead"   style="width:100%">
+                              <button type="submit" class="btn btn-primary btn-tambah mb-3">Tambah Data<i class="fa fa-plus ml-2" aria-hidden="true"></i></button>
+                           <table id="tablepenulis" class="table tablehead"   style="width:100%">
                                                 <thead>
                                                     <tr class="thead">
                                                         <th data-orderable="false">No</th>
-                                                        <th >Isi</th>
+                                                        <th>Isi</th>
                                                         <th data-orderable="false">Aksi</th>
                                                         
                                                     </tr>
@@ -23,9 +24,9 @@
                                                     
                                                 </tbody>
                                             </table>
-                                            <button type="submit" class="btn btn-primary">Tambah Data</button>
+                                            
                         </div>
-                    </div>
+                    
                        
                    
 
