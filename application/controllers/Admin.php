@@ -38,6 +38,7 @@ class Admin extends Core {
 		$data['title'] = 'Menu & href';
 		$this->renderadm('admin/menu',$data);
 	}
+
 	public function activiti(){
 		if(!$this->isLogin){
 			redirect('Login');
@@ -45,6 +46,15 @@ class Admin extends Core {
 		}
 		$data['title'] = 'Activiti Log';
 		$this->renderadm('admin/activiti',$data);
+	}
+
+	public function hapus_log(){
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
+		$this->db->delete("activity_log", array('id'));
+		redirect('admin/activiti');
 	}
 
 	public function getDataActiviti(){
@@ -65,6 +75,7 @@ class Admin extends Core {
 		);
 		$this->output->set_content_type('application/json')->set_output(json_encode($output));
 	}
+
 	public function getDataMenu(){
 		$result = $this->Admin_model->getDataTableMenu();
 		$data = [];

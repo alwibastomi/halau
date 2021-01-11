@@ -58,6 +58,7 @@ class User_model extends CI_Model
     $query = $this->db->get()->row();
     if($query != null){
       if(md5("Maaf:(".$password) == $query->password){
+      // if(md5($password) == $query->password){
         $data = array(
           'isLogin' => true,
           'email' => $query->email,

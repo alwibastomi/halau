@@ -16,11 +16,7 @@ class Admin_model extends CI_Model
 	var $column_order_activiti = array('id','keterangan','date_time');
 	var $order_activiti = array('id','keterangan','date_time');
 
-	
-
-
 	private function _get_data_query(){
-
 		$this->db->from($this->table);
 		if(isset($_POST['search']['value'])){
 			$this->db->like('isi',$_POST['search']['value']);
@@ -44,6 +40,7 @@ class Admin_model extends CI_Model
 			$this->db->order_by('id','DESC');
 		}
 	}
+
 	private function _get_data_query_activiti(){
 		$this->db->from($this->table_activiti);
 		if(isset($_POST['search']['value'])){
@@ -56,6 +53,7 @@ class Admin_model extends CI_Model
 			$this->db->order_by('id','DESC');
 		}
 	}
+
 	public function getDataTableActiviti(){
 		$this->_get_data_query_activiti();
 		$query = $this->db->get();
