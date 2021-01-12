@@ -32,7 +32,7 @@ class Admin extends Core {
 		$data['title'] = 'Penulis';
 		$this->renderadm('admin/penulis',$data);
 	}
-	
+
 	public function menu(){
 		if(!$this->isLogin){
 			redirect('Login');
@@ -50,34 +50,6 @@ class Admin extends Core {
 		$data['title'] = 'Activiti Log';
 		$data['allActivity'] = $this->m_activity->getAllActivity();
 		$this->renderadm('admin/activiti',$data);
-	}
-
-	public function hapus_log(){
-		if(!$this->isLogin){
-			redirect('Login');
-			die();
-		}
-		$this->db->delete("activity_log", array('id'));
-		redirect('admin/activiti');
-	}
-
-	public function getDataActiviti(){
-		$result = $this->Admin_model->getDataTableActiviti();
-		$data = [];
-		$no = $_POST['start'];
-		foreach ($result as $r) {
-			$row = array();
-			$row[] = ++$no;
-			$row[] = $r->keterangan;
-			$row[] = $r->date_time;
-			$data[] = $row;
-
-		}
-		$output = array(
-			"draw" => $_POST['draw'],
-			"data" => $data
-		);
-		$this->output->set_content_type('application/json')->set_output(json_encode($output));
 	}
 
 	public function getDataMenu(){

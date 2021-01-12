@@ -10,9 +10,9 @@
     <div class="card-body">
 
       <h3 class="text-center">Aktivitas</h3>
-      <a href="<?= site_url('Admin/hapus_log') ?>" class="btn btn-primary btn-tambah mb-3">Delete<i class="fa fa-trash ml-2" aria-hidden="true"></i></a>
+      <a href="<?= site_url('Activity/hapus_log') ?>" class="btn btn-primary btn-tambah mb-3">Delete<i class="fa fa-trash ml-2" aria-hidden="true"></i></a>
       <!-- id="tableactiviti" tablehead  -->
-      <table class="table datatable-ku" data-func="activity" data-meth="activity_datatable" style="width:100%">
+      <table class="table tablehead datatable-ku" data-func="activity" data-meth="activity_datatable" style="width:100%">
         <thead>
           <tr class="thead">
             <th data-orderable="false">ID</th>

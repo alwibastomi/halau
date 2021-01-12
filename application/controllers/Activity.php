@@ -15,8 +15,18 @@ class Activity extends Core {
 			redirect('Auth');
 			die();
 		}
+		$data['title'] = 'Activiti Log';
 		$data['allActivity'] = $this->m_activity->getAllActivity();
 		$this->renderadm('admin/activiti', $data);
+	}
+
+	public function hapus_log(){
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
+		$this->db->delete("activity_log", array('id'));
+		redirect('admin/activiti');
 	}
 
 	public function activity_datatable()

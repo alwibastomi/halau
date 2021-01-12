@@ -101,31 +101,31 @@ aria-hidden="true">
 
 
 
-        $(document).ready(function() {
-            $('.tablehead').DataTable({
-                "language" :{
-                   "sEmptyTable":    "Tidak Ada Data",
-                   "sProcessing":   "Sedang memproses...",
-                   "sLengthMenu":   "Tampilkan _MENU_  data",
-                   "sZeroRecords":  "Tidak ditemukan data yang sesuai",
-                   "sInfo":         "_END_ data dari total _TOTAL_ data",
-                   "sInfoEmpty":    "0 data",
-                   "sInfoFiltered": "(disaring dari _MAX_ data)",
-                   "sInfoPostFix":  "",
-                   "sSearch":       "Cari:",
-                   "sUrl":          "",
-                   "oPaginate": {
-                      "sFirst":    "Pertama",
-                      "sPrevious": "Kembali",
-                      "sNext":     "lanjut",
-                      "sLast":     "Terakhir"
-                  }
+        // $(document).ready(function() {
+        //     $('.tablehead').DataTable({
+        //         "language" :{
+        //            "sEmptyTable":    "Tidak Ada Data",
+        //            "sProcessing":   "Sedang memproses...",
+        //            "sLengthMenu":   "Tampilkan _MENU_  data",
+        //            "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+        //            "sInfo":         "_END_ data dari total _TOTAL_ data",
+        //            "sInfoEmpty":    "0 data",
+        //            "sInfoFiltered": "(disaring dari _MAX_ data)",
+        //            "sInfoPostFix":  "",
+        //            "sSearch":       "Cari:",
+        //            "sUrl":          "",
+        //            "oPaginate": {
+        //               "sFirst":    "Pertama",
+        //               "sPrevious": "Kembali",
+        //               "sNext":     "lanjut",
+        //               "sLast":     "Terakhir"
+        //           }
 
-              }
+        //       }
 
-          });
+        //   });
 
-        } );
+        // } );
 
 
 
