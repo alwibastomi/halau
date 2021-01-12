@@ -14,6 +14,7 @@ class Admin extends Core {
 		$data['title'] = 'Halaman Admin';
 		$this->renderadm('admin/dashboard',$data);
 	}
+
 	public function artikel(){		
 		if(!$this->isLogin){
 			redirect('Login');
@@ -22,6 +23,7 @@ class Admin extends Core {
 		$data['title'] = 'Artikel';
 		$this->renderadm('admin/artikel',$data);
 	}
+
 	public function penulis(){
 		if(!$this->isLogin){
 			redirect('Login');
@@ -30,6 +32,7 @@ class Admin extends Core {
 		$data['title'] = 'Penulis';
 		$this->renderadm('admin/penulis',$data);
 	}
+	
 	public function menu(){
 		if(!$this->isLogin){
 			redirect('Login');
@@ -45,6 +48,7 @@ class Admin extends Core {
 			die();
 		}
 		$data['title'] = 'Activiti Log';
+		$data['allActivity'] = $this->m_activity->getAllActivity();
 		$this->renderadm('admin/activiti',$data);
 	}
 

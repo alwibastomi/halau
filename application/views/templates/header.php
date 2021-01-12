@@ -14,55 +14,74 @@
     <!-- Custom fonts for this template-->
     
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets') ?>/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets')?>/vendor/datatables/dataTables.bootstrap4.min.css">
     <link href="<?= base_url('assets') ?>/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- JS -->
+    <script type="text/javascript"> var BASE_URL = "<?php echo base_url();?>"; </script>
+
+    <script src="<?= site_url('assets/css/vendors/js/vendor.bundle.addons.js'); ?>"></script>
+    <script src="<?= site_url('assets/css/vendors/js/vendor.bundle.base.js'); ?>"></script>
+    <script src="<?= site_url('assets/js/off-canvas.js'); ?>"></script>
+    <script src="<?= site_url('assets/js/misc.js'); ?>"></script>
+
+    <script src="<?= site_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+
+    <script src="<?= site_url('assets/js/dataTables.bootstrap4.min.js'); ?>"></script>
+
+    <script src="<?= site_url('assets/js/select2.min.js'); ?>"></script>
+    <script src="<?= site_url('assets/sweetalert/sweetalert.min.js'); ?>"></script>
+    <script src="<?= site_url('assets/js/scripts.js'); ?>"></script>
+
+    <script src="<?= site_url('assets/custom1.js'); ?>"></script>
+    <script src="<?= site_url('assets/cus.js'); ?>"></script>
     
 
     <style type="text/css">
         .bg-gradient-primary{
-             background-color: #253137 !important;
-              background-image: linear-gradient(180deg, #253137 10%, #253137 100%);
-              background-size: cover;
-        }
-        .tablehead{
-            background-color: white;
-            color: black;
+         background-color: #253137 !important;
+         background-image: linear-gradient(180deg, #253137 10%, #253137 100%);
+         background-size: cover;
+     }
+     .tablehead{
+        background-color: white;
+        color: black;
 
-        }
-        .sorting{
-            margin-left: -200px;
-        }
-        .text-center{
-            color: black;
-            font-weight: 500;
-        }
-        #tableku_filter{
-            width: 80%;
-        }
-        #tableku_filter input{
-            width: 200px;
-        }
-        .btn-tambah{
-            background-color: #0b0c1f;
-            border-radius: 0 !important;
-            border: none;
-        }
+    }
+    .sorting{
+        margin-left: -200px;
+    }
+    .text-center{
+        color: black;
+        font-weight: 500;
+    }
+    #tableku_filter{
+        width: 80%;
+    }
+    #tableku_filter input{
+        width: 200px;
+    }
+    .btn-tambah{
+        background-color: #0b0c1f;
+        border-radius: 0 !important;
+        border: none;
+    }
 
-    </style>
-    
+</style>
+
 
 </head>
 
 <body id="page-top">
 
 
-<body id="page-top ">
+    <body id="page-top ">
     <!-- <?php if($this->session->flashdata('pesan')): ?>
         <div class="position-realetive ">
                 <div class="position-absolute bottom-right-toast">
@@ -77,8 +96,8 @@
                 </div>
             </div>
         </div>
-    <?php endif ?> -->
+        <?php endif ?> -->
         
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+        <!-- Page Wrapper -->
+        <div id="wrapper">

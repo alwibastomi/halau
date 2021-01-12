@@ -35,8 +35,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item <?php if($this->uri->segment(2)=="activiti"){echo "active";}?>">
-                <a class="nav-link" href="<?= base_url('admin/activiti') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Activity"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('Activity') ?>">
                     <i class="fas fa-fw fa-user-clock"></i>
                     <span>Activity Log</span></a>
             </li>
