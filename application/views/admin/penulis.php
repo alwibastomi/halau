@@ -1,4 +1,10 @@
-
+<?php 
+if ($alert == 'sukses') { ?>
+  <script type="text/javascript">
+    alert('Data Terhapus')
+    window.location = "<?= site_url('Penulis') ?>";
+  </script>
+<?php }?>
 <!-- /.container-fluid -->
 <div class="container-fluid">
 

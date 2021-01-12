@@ -11,18 +11,42 @@ class Menu extends Core {
 
 	public function index()
 	{
-		// if(!$this->isLogin){
-		// 	redirect('Auth');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
 		$data['title'] = 'Menu & Href';
 		$data['allMenu'] = $this->m_menu->getAllMenu();
 		$this->renderadm('admin/menu', $data);
 	}
 
-	public function edit(){
+	public function edit($id){
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
+
+		$this->form_validation->set_rules('menu', 'menu', 'required');
+		$this->form_validation->set_rules('href', 'href', 'required');
+
+		$data['menu'] = $this->user_model->getData('menu', $id);
 		$data['title'] = 'Menu Edit';
-		$this->renderadm('menu/edit',$data);
+
+		if($this->form_validation->run() == false){
+			$data['alert'] = '';
+		}else{
+			$id = $this->uri->segment(3);
+			$where = array('id' => $id);
+
+			$data = array(
+				'menu' => $this->input->post('menu'),
+				'href' => $this->input->post('href')
+			);
+
+			$this->user_model->editData('menu', $where, $data);
+			$data['alert'] = 'sukses';
+		}
+		$this->renderadm('menu/edit', $data);
 	}
 
 	public function menu_datatable()

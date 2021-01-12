@@ -78,11 +78,10 @@ class M_penulis extends CI_Model
     );
 
     foreach ($q as $val) {
-      $id = 1;
-      $btn = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="hapus('."'".$val->nama."'".')"><i class="glyphicon glyphicon-pencil"></i> Hapus</a>';
+      $btn = '<a class="btn btn-sm btn-danger" href="'.site_url('Penulis/hapus/'.$val->email).'" title="Hapus"><i class="glyphicon glyphicon-pencil"></i> Hapus</a>';
 
       $output['data'][] = array(
-        $id++,
+        $val->email,
         $val->nama,
         $val->level,
         $btn

@@ -11,7 +11,7 @@ class User_model extends CI_Model
   public function _post($name , $xss = true){
     return $this->input->post($name , $xss);
   }
-    public function addPenAng()
+  public function addPenAng()
   {
 
     $data = array(
@@ -21,7 +21,7 @@ class User_model extends CI_Model
     );
     return $this->db->insert("tb_siswa", $data);
   }
-    public function getUsername($db, $where)
+  public function getUsername($db, $where)
   {
     $this->db->select("count(*) as total");
     $this->db->from($db);
@@ -29,9 +29,23 @@ class User_model extends CI_Model
     $q = $this->db->get()->row();
     return $q->total;
   }
-    public function add_surata($table, $data)
+  public function addData($table, $data)
   {
-    $this->db->insert($table, $data);
+    return $this->db->insert($table, $data);
+  }
+
+  public function editData($table, $where, $data)
+  {
+    $this->db->where($where);
+    return $this->db->update($table, $data);
+  }
+
+  public function getData($table, $where)
+  {
+    $this->db->select("*");
+    $this->db->from($table);
+    $this->db->where('id', $where);
+    return $this->db->get()->row();
   }
 
   public function set($id)
@@ -45,7 +59,7 @@ class User_model extends CI_Model
       'nama_lengkap' => $this->input->post('nama_lengkap'),
     );
     $this->session->set_userdata($data);
-  
+
   }
   public function doLogin()
   {

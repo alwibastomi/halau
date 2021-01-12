@@ -12,10 +12,10 @@ class Artikel extends Core {
 
 	public function index()
 	{
-		// if(!$this->isLogin){
-		// 	redirect('Auth');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
 		$data['title'] = 'Artikel';
 		$data['allArtikel'] = $this->m_artikel->getAllArtikel();
 		$this->renderadm('admin/artikel', $data);

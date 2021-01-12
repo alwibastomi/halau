@@ -16,10 +16,10 @@ class Admin extends Core {
 	}
 
 	public function artikel(){		
-		// if(!$this->isLogin){
-		// 	redirect('Login');
-		// 	die();
-		// }
+		if(!$this->isLogin){
+			redirect('Login');
+			die();
+		}
 		$data['title'] = 'Artikel';
 		
 		$this->renderadm('admin/artikel',$data);
