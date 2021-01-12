@@ -68,11 +68,41 @@
         width: 200px;
     }
     .btn-tambah{
-        background-color: #0b0c1f;
+        background-color: #404040;
         border-radius: 0 !important;
         border: none;
     }
-
+    .btn-tambah:hover{
+        background-color: #050614;
+        border-radius: 0 !important;
+        border: none;
+    }
+    .btn-flat{
+        border-radius: 0;
+    }
+    .card h3{
+        color: #050614;
+        text-align: center;
+        font-weight: 500;
+       
+    }
+    .form-group input{
+        border-radius: 0;
+    }
+    .form-group label{
+        color: #050614;
+        font-weight: 600
+    }
+    .btn-warning{
+        background-color: #404040; 
+        border-radius: 0 !important;
+        border: none;
+    }
+    .btn-warning:hover{
+        background-color: #050614;
+        border-radius: 0 !important;
+        border: none;
+    }
 </style>
 
 

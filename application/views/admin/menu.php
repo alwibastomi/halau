@@ -1,3 +1,5 @@
+
+<!-- /.container-fluid -->
 <div class="container-fluid">
 
 
@@ -9,15 +11,16 @@
   <div class="card">
     <div class="card-body">
 
-      <h3 class="text-center">Menu & Href</h3>
-      <table id="tablemenu" class="table tablehead"   style="width:100%">
+      <h3 class="text-center">Menu</h3>
+      
+      <!-- id="tableactiviti" tablehead  -->
+      <table class="table tablehead datatable-ku" data-func="menu" data-meth="menu_datatable" style="width:100%">
         <thead>
           <tr class="thead">
             <th data-orderable="false">No</th>
             <th>Menu</th>
             <th>Href</th>
             <th data-orderable="false">Aksi</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -32,4 +35,6 @@
 
 </div>
 <!-- /.container-fluid -->
+
+
 

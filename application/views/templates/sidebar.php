@@ -13,8 +13,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item <?php if($this->uri->segment(2)=="dashboard"){echo "active";}?>" >
-                <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>" >
+                <a class="nav-link" href="<?= base_url('dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -28,8 +28,8 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if($this->uri->segment(2)=="penulis"){echo "active";}?>">
-                <a class="nav-link " href="<?= base_url('admin/penulis') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="penulis"){echo "active";}?>">
+                <a class="nav-link " href="<?= base_url('penulis') ?>">
                     <i class="fas fa-fw fa-pen-alt"></i>
                     <span>Tambah Penulis</span></a>
             </li>
@@ -49,15 +49,15 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if($this->uri->segment(2)=="menu"){echo "active";}?>">
-                <a class="nav-link" href="<?= base_url('admin/menu') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Menu"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('Menu') ?>">
                     <i class="fas fa-fw fa-folder-plus"></i>
                     <span>Menu & Href</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item <?php if($this->uri->segment(2)=="artikel"){echo "active";}?>">
-                <a class="nav-link" href="<?= base_url('admin/artikel') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="artikel"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('artikel') ?>">
                     <i class="fas fa-fw fa-file-alt"></i>
                     <span>Artikel</span></a>
             </li>

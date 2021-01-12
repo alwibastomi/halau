@@ -1,3 +1,5 @@
+
+<!-- /.container-fluid -->
 <div class="container-fluid">
 
 
@@ -10,12 +12,17 @@
     <div class="card-body">
 
       <h3 class="text-center">Artikel</h3>
-      <button type="submit" class="btn btn-primary btn-tambah mb-3">Tambah Data<i class="fa fa-plus ml-2" aria-hidden="true"></i></button>
-      <table id="tablepenulis" class="table tablehead"   style="width:100%">
+      
+      <a href="<?= site_url('Artikel/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
+      
+      
+      <table class="table tablehead datatable-ku" data-func="artikel" data-meth="artikel_datatable" style="width:100%">
         <thead>
           <tr class="thead">
             <th data-orderable="false">No</th>
-            <th>Isi</th>
+            <th>Header</th>
+            <th>Id_isi</th>
+            <th>Pakai</th>
             <th data-orderable="false">Aksi</th>
             
           </tr>
@@ -26,11 +33,12 @@
       </table>
       
     </div>
-    
-    
-    
-
   </div>
-  <!-- /.container-fluid -->
-
   
+ 
+
+</div>
+<!-- /.container-fluid -->
+
+
+

@@ -11,10 +11,10 @@ class Activity extends Core {
 
 	public function index()
 	{
-		if(!$this->isLogin){
-			redirect('Auth');
-			die();
-		}
+		// if(!$this->isLogin){
+		// 	redirect('Auth');
+		// 	die();
+		// }
 		$data['title'] = 'Activiti Log';
 		$data['allActivity'] = $this->m_activity->getAllActivity();
 		$this->renderadm('admin/activiti', $data);

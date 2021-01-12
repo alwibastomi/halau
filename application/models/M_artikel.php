@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_penulis extends CI_Model
+class M_artikel extends CI_Model
 {
   private $level;
   function __construct(){
@@ -12,33 +12,33 @@ class M_penulis extends CI_Model
     return $this->input->post($name , $xss);
   }
 
-  public function getAllPenulis()
+  public function getAllArtikel()
   {
     $this->db->select("*");
-    $this->db->from("user");
+    $this->db->from("artikel");
     return $this->db->get()->result();
   }
 
-  public function getRecentPenulis()
+  public function getRecentArtikel()
   {
     $this->db->select("*");
-    $this->db->from("user");
-    $this->db->order_by("nama", "DESC");
+    $this->db->from("artikel");
+    $this->db->order_by("id", "DESC");
     $this->db->limit(5);
     return $this->db->get()->result();
   }
 
-  public function getCountPenulis()
+  public function getCountArtikel()
   {
-    $this->db->select("count(nama) as total");
-    $this->db->from("user");
+    $this->db->select("count(id) as total");
+    $this->db->from("artikel");
     $q = $this->db->get()->row();
     return $q->total;
   }
 
-  public function datatablePenulis()
+  public function datatableArtikel()
   {
-    $array = array("nama", "level");
+    $array = array("id","header", "id_isi","pakai");
     $start = $this->_post('start');
     $offset = $this->_post('length');
     if ($start != null && $offset != null) {
@@ -48,8 +48,10 @@ class M_penulis extends CI_Model
     $search = $this->_post('search');
     if($search['value'] != ''){
       $key = $search['value'];
-      $this->db->like('nama', $key);
-      $this->db->or_like('level', $key);
+      $this->db->like('id', $key);
+      $this->db->or_like('header', $key);
+      $this->db->or_like('id_isi', $key);
+      $this->db->or_like('pakai', $key);
     }
 
     $order = $this->_post('order');
@@ -61,15 +63,15 @@ class M_penulis extends CI_Model
     }
 
     $this->db->select("SQL_CALC_FOUND_ROWS *" ,FALSE);
-    $this->db->from("user");
-    $this->db->order_by("nama", "DESC");
+    $this->db->from("artikel");
+    $this->db->order_by("id", "DESC");
     $sql = $this->db->get();
     $q = $sql->result();
     $this->db->select("FOUND_ROWS() AS total_row");
     $row = $this->db->get()->row();
 
     $sEcho = $this->_post('draw');
-    $getCountAll = $this->getCountPenulis();
+    $getCountAll = $this->getCountArtikel();
     $output = array(
       "draw" => intval($sEcho),
       "recordsTotal" => $getCountAll,
@@ -78,18 +80,24 @@ class M_penulis extends CI_Model
     );
 
     foreach ($q as $val) {
-      $id = 1;
-      $btn = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="hapus('."'".$val->nama."'".')"><i class="glyphicon glyphicon-pencil"></i> Hapus</a>';
+       $btn = ' <a href="'.site_url('Artikel/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>
+      <a href="'.site_url('Artikel/detail/'.$val->id).'" class="btn btn-success" style="text-align: center;"  title="Detail">Detail</a>
+      <a href="'.site_url('Artikel/delete/'.$val->id).'" class="btn btn-danger" style="text-align: center;"  title="Delete">Delete</a>';
 
       $output['data'][] = array(
-        $id++,
-        $val->nama,
-        $val->level,
+        $val->id,
+        $val->header,
+        $val->id_isi,
+        $val->pakai,
         $btn
       );
     }
     return $output;
   }
 
-  
+  function Artikel_delete($where,$table){
+
+    $this->db->where($where);
+    $this->db->delete($table);
+  }
 }
