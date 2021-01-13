@@ -41,13 +41,9 @@ aria-hidden="true">
 </div>
 
 
-   <!--  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script> -->
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
-
-    <script src="<?= base_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="<?= site_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= site_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     
     
     
@@ -62,7 +58,13 @@ aria-hidden="true">
     <script type="text/javascript" src="<?= base_url('assets')?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 
-
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            $('.toast').toast({delay:5000});
+            $('.toast').toast('show');
+        });
+    </script>
     
 
 

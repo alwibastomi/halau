@@ -18,10 +18,20 @@
     rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets') ?>/css/bootstrap.css">
+    
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets')?>/vendor/datatables/dataTables.bootstrap4.min.css">
     <link href="<?= base_url('assets') ?>/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <script src="<?= site_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= site_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+    
+
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?= base_url('assets') ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- JS -->
     <script type="text/javascript"> var BASE_URL = "<?php echo base_url();?>"; </script>
@@ -42,6 +52,8 @@
     <script src="<?= site_url('assets/custom1.js'); ?>"></script>
     <script src="<?= site_url('assets/cus.js'); ?>"></script>
     
+
+
 
     <style type="text/css">
         .bg-gradient-primary{
@@ -103,6 +115,35 @@
         border-radius: 0 !important;
         border: none;
     }
+     .bottom-right-toast{
+            bottom: 20px;
+            right: 10px;
+        }
+        
+        .toast-body{
+            border-left: 4px solid #404040;
+            color: black;
+        }
+        .cek{
+            margin-top: 10px;
+            position: absolute;
+            font-size: 30px;
+            color: black;
+        }
+        .message-j strong{
+            font-size: 18px;
+            margin-top: -5px!important;
+            margin-bottom: -6px;
+            margin-left:  44px!important;
+        }
+        .message-i{
+            margin-left: 43px;
+            margin-bottom: -6px;
+        }
+        .toast{
+            transition: all 1s ;
+        }
+        
 </style>
 
 
@@ -112,21 +153,21 @@
 
 
     <body id="page-top ">
-    <!-- <?php if($this->session->flashdata('pesan')): ?>
+    <?php if($this->session->flashdata('pesan')): ?>
         <div class="position-realetive ">
                 <div class="position-absolute bottom-right-toast">
                     <div class="toast d-flex align-items-center text-black bg-light border-0 mb-5 mr-4" role="alert" aria-live="assertive" aria-atomic="true">
                               <div class="toast-body message-j">
-                                <i class="fas fa-check cek"></i><strong id="message-j">Jurnalku Book</strong>
+                                <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
 
-                            <p class="message-i">Selamat Datang  <?= $user['nama']?></p>
+                            <p class="message-i" style="margin-right: 50px; margin-top: -6px; padding-bottom: 5px; padding-left: 4px;">Sukses Tambah Data</p>
                           </div>
-                          <button type="button" class="btn-close btn-close-black ms-auto me-2 mb-4 mr-2" data-bs-dismiss="toast" aria-label="Close"></button>
+                          <!-- <button type="button" class="btn-close btn-close-black ms-auto me-2 mb-4 mr-2" data-bs-dismiss="toast" aria-label="Close"></button> -->
                         </div>
                 </div>
             </div>
         </div>
-        <?php endif ?> -->
+        <?php endif ?>
         
 
         <!-- Page Wrapper -->

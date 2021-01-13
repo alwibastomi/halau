@@ -1,15 +1,5 @@
 <?php
 
-
-
-
-
-
-
-
-
-
-
 namespace Composer;
 
 use Composer\Semver\VersionParser;
@@ -29,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '01c2f45867723f57b0d935d82c9db324bbe49f04',
+    'reference' => '773105ca463023964e16fe65c956d5f35f10dae3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +31,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '01c2f45867723f57b0d935d82c9db324bbe49f04',
+      'reference' => '773105ca463023964e16fe65c956d5f35f10dae3',
+    ),
+    'ckeditor/ckeditor' => 
+    array (
+      'pretty_version' => '4.15.1',
+      'version' => '4.15.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b1aa2f31687b5d48a4f4a9a94d388b525a82663f',
     ),
     'mpdf/mpdf' => 
     array (

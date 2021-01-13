@@ -24,6 +24,7 @@ class Artikel extends Core {
 	public function tambah(){
 		$data['title'] = 'Tambah Data';
 		$this->renderadm('artikel/tambah',$data);
+		$this->session->set_flashdata('pesan','pesan');
 	}
 	public function edit(){
 		$data['title'] = 'Edit';
