@@ -4,7 +4,10 @@ class L_page extends Core {
 
 	public function index()
 	{
-		$this->renderpage('landing_page/index');
+		$data['kelas'] = $this->admin_model->getAllKelas();
+		$data['matpel'] = $this->admin_model->getAllMatpel();
+		$data['semester'] = $this->admin_model->getAllSemester();
+		$this->renderpage('landing_page/index', $data);
 	}
 
 	public function Disclaimer()

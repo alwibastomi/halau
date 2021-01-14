@@ -9,7 +9,7 @@ class Core extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url','form');
 		$this->load->library(array('form_validation'));
-		$this->load->model(array('user_model','m_activity','m_penulis', 'm_menu'));
+		$this->load->model(array('user_model','m_activity','m_penulis', 'm_menu', 'admin_model'));
 
 		$this->isLogin = $this->session->userdata('isLogin');
 	}
@@ -17,7 +17,7 @@ class Core extends CI_Controller {
 	public function renderpage($view, $datas = array())
 	{
 
-		$data['nama'] = $this->session->userdata('namanama');
+		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');
 		$this->load->view('template/header');
@@ -31,9 +31,13 @@ class Core extends CI_Controller {
 	}
 
 	public function renderadm($view,$data = array()){
+
+		$data['nama'] = $this->session->userdata('nama');
+		$data['email'] = $this->session->userdata('email');
+		$data['level'] = $this->session->userdata('level');
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/sidebar');
-		$this->load->view('templates/topbar');
+		$this->load->view('templates/topbar',$data);
 		$this->load->view($view,$data);
 		$this->load->view('templates/footer');
 	}

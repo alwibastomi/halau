@@ -1,3 +1,7 @@
+<?php 
+$date = date('Y-m-d');
+?>
+
 <!-- End Body Navbar -->
 <div class="container">
   <div class="row">
@@ -84,7 +88,7 @@
             </a>
           </div>
           <h3 class="title text-left" style="color: black;"><b>Isi Detail RPP</b></h3>     
-          <form form role="form" id="myform" action="" method="post" enctype="multipart/form-data" style="color: black">   
+          <form form role="form" id="myform" action="<?= site_url('RPP') ?>" method="post" enctype="multipart/form-data" style="color: black">   
             <!-- nama  -->
             <div class="row">
               <div class="col-md-4">
@@ -129,7 +133,7 @@
                 <!-- Tanggal RPP -->
                 <div class="form-group">
                   <div class="input-group date">
-                    <input type="text" name="tanngal_rpp" style="background-color: white" class="form-control basicDate" placeholder="Tanggal RPP" required>
+                    <input type="text" name="tanggal_rpp" style="background-color: white" class="form-control basicDate" value="<?= $date ?>" placeholder="Tanggal RPP" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar"
@@ -155,10 +159,8 @@
                     <select name="tahun_ajaran" id="tahun_ajaran" class="form-control" required>
                       <option value="">- PILIH -</option>
                       <?php
-                      $th = 1945;
-                      $tgl = date('Y');
-                      for ($th; $th <= $tgl; $th++) {
-                        echo "<option value=".$th.">".$th."</option>";
+                      for ($tgl = date('Y'); $tgl >= 19; $tgl--) {
+                        echo "<option value=".$tgl.">".$tgl."</option>";
                       }
                       ?>
                     </select>
@@ -179,8 +181,11 @@
                   <div class="form-group">
                     <select name="kelas" id="kelas" class="form-control" required>
                       <option value="">- PILIH -</option>
-                      <option value="">X</option>
-                      <option value="">XI</option>
+                      <?php 
+                      foreach ($kelas as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->kelas ?></option>
+                      <?php }?>
                     </select>
                   </div>
                 </div>
@@ -198,9 +203,35 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <select name="pelajaran" id="pelajaran" class="form-control" required>
-                      <option value="">- PILIH -</option>
-                      <option value="">MAT</option>
-                      <option value="">Penjaskes</option>
+                      <option value="">- PILIH -</option>                      
+                      <?php 
+                      foreach ($matpel as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->nama_matpel ?></option>
+                      <?php }?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- end pelajaran  -->
+
+              <!-- semester  -->
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group mt-2">
+                    <label style="color: black;">Pilih Semester</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select name="pelajaran" id="pelajaran" class="form-control" required>
+                      <option value="">- PILIH -</option>                      
+                      <?php 
+                      foreach ($semester as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->semester ?></option>
+                      <?php }?>
                     </select>
                   </div>
                 </div>
@@ -215,12 +246,14 @@
               </div>
               <!-- iklan -->
               <!-- end -->
+              <div id='hasil'>
+
+              </div>
 
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-ijo btn-round" name="save">Buat RPP</button>
-                  </div>
+                  <button type="submit" class="btn btn-ijo btn-round" id="save">Generate</button>
+
                 </div>
               </div>
               <!-- end  -->
@@ -282,6 +315,27 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
     <!-- end alur  -->
+<!--     <script type="text/javascript">
 
+      $('#myform').submit(function(e){
+        e.preventDefault()
+
+        $.ajax({
+          type:'POST',
+          data:new FormData(this),
+          url:'<?= site_url('RPP') ?>',
+          processData: false,
+          contentType: false,  
+          cache:false,
+          async:false,
+          success: function(hasil){
+            alert(hasil);
+          }
+        });
+      });
+    </script> -->
     <!-- mulai footer -->
