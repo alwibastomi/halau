@@ -36,6 +36,12 @@ class M_activity extends CI_Model
     return $q->total;
   }
 
+  public function getReset()
+  {
+    $sql = "ALTER TABLE activity_log AUTO_INCREMENT = 1";
+    return $this->db->query($sql);
+  }
+
   public function datatableActivity()
   {
     $array = array("id","keterangan", "date_time");

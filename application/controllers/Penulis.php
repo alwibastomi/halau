@@ -36,15 +36,14 @@ class Penulis extends Core {
 		}else{
 			$data = array(
 				'email' => $this->input->post('email'),
-				'password' => md5("akusayangkamu:*".$this->input->post('password')),
-				'email' => $this->input->post('email'),
 				'nama' => $this->input->post('nama'),
+				'password' => md5("akusayangkamu:*".$this->input->post('password')),
 				'level' => $this->input->post('level')
 			);
 
 			$data1 = array(
-				'keterangan' => 'Tambah Penulis '.$this->input->post('email'),
-				'date_time' => date('Y-m-d')
+				'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Menambah Penulis <b>'.$this->input->post('nama').'</b>',
+				'date_time' => date('Y-m-d H:i:s')
 			);
 
 			$this->user_model->addData('activity_log', $data1);
@@ -62,12 +61,15 @@ class Penulis extends Core {
 			redirect('Login');
 			die();
 		}
-		$data = array(
-			'keterangan' => 'Hapus Penulis '.$email,
-			'date_time' => date('Y-m-d')
+		$ha = $this->user_model->getDataAc('user', $email);
+		$he = $ha->nama;
+
+		$data1 = array(
+			'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Menghapus Penulis <b>'.$he.'</b>',
+			'date_time' => date('Y-m-d H:i:s')
 		);
 
-		$this->user_model->addData('activity_log', $data);
+		$this->user_model->addData('activity_log', $data1);
 
 		$this->db->delete("user", array('email' => $email));
 		$data['alert'] = 'sukses';

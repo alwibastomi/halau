@@ -80,24 +80,23 @@ class M_artikel extends CI_Model
     );
 
     foreach ($q as $val) {
-       $btn = ' <a href="'.site_url('Artikel/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>
+      if ($val->pakai == 1) {
+        $pil = 'Ya';
+      }else{
+        $pil = 'Tidak';
+      }
+      $btn = ' <a href="'.site_url('Artikel/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>
       <a href="'.site_url('Artikel/detail/'.$val->id).'" class="btn btn-success" style="text-align: center;"  title="Detail">Detail</a>
-      <a href="'.site_url('Artikel/delete/'.$val->id).'" class="btn btn-danger" style="text-align: center;"  title="Delete">Delete</a>';
+      <a href="'.site_url('Artikel/hapus/'.$val->id).'" class="btn btn-danger" style="text-align: center;"  title="Delete">Delete</a>';
 
       $output['data'][] = array(
         $val->id,
         $val->header,
-        $val->id_isi,
-        $val->pakai,
+        $val->isi,
+        $pil,
         $btn
       );
     }
     return $output;
-  }
-
-  function Artikel_delete($where,$table){
-
-    $this->db->where($where);
-    $this->db->delete($table);
   }
 }

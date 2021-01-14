@@ -17,6 +17,13 @@ class Login extends Core{
 		}else{
 			if($this->user_model->doLogin())
 			{
+				$data = array(
+					'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Login',
+					'date_time' => date('Y-m-d H:i:s')
+				);
+
+				$this->user_model->addData('activity_log', $data);
+
 				redirect('Admin/dashboard');
 			}else {
 				$data['alert'] = 'gagal';
@@ -25,9 +32,16 @@ class Login extends Core{
 			}
 		}
 	}
-		public function logout()
+	public function logout()
 	{
+		$data = array(
+			'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Logout',
+			'date_time' => date('Y-m-d H:i:s')
+		);
+
+		$this->user_model->addData('activity_log', $data);
 		$this->user_model->doLogout();
+
 		redirect('Login');
 	}
 

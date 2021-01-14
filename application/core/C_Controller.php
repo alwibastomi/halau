@@ -7,6 +7,7 @@ class Core extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		date_default_timezone_set('Asia/Jakarta');
 		$this->load->helper('url','form');
 		$this->load->library(array('form_validation'));
 		$this->load->model(array('user_model','m_activity','m_penulis', 'm_menu', 'admin_model'));

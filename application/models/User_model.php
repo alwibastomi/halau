@@ -48,6 +48,14 @@ class User_model extends CI_Model
     return $this->db->get()->row();
   }
 
+    public function getDataAc($table, $where)
+  {
+    $this->db->select("*");
+    $this->db->from($table);
+    $this->db->where('email', $where);
+    return $this->db->get()->row();
+  }
+
   public function set($id)
   {
     $this->db->select("*");

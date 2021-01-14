@@ -1,4 +1,10 @@
-
+<?php 
+if ($alert == 'sukses') { ?>
+  <script type="text/javascript">
+    alert('Data Terhapus')
+    window.location = "<?= site_url('Artikel') ?>";
+  </script>
+<?php }?>
 <!-- /.container-fluid -->
 <div class="container-fluid">
 
@@ -21,21 +27,21 @@
           <tr class="thead">
             <th data-orderable="false">No</th>
             <th>Header</th>
-            <th>Id_isi</th>
+            <th>Isi</th>
             <th>Pakai</th>
             <th data-orderable="false">Aksi</th>
             
           </tr>
         </thead>
         <tbody>
-          
+
         </tbody>
       </table>
       
     </div>
   </div>
   
- 
+
 
 </div>
 <!-- /.container-fluid -->

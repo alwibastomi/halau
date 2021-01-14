@@ -43,6 +43,13 @@ class Menu extends Core {
 				'href' => $this->input->post('href')
 			);
 
+			$data1 = array(
+				'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Mengubah Menu pada ID <b>'.$id.'</b>',
+				'date_time' => date('Y-m-d H:i:s')
+			);
+
+			$this->user_model->addData('activity_log', $data1);
+
 			$this->user_model->editData('menu', $where, $data);
 			$data['alert'] = 'sukses';
 		}

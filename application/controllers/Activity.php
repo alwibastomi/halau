@@ -26,6 +26,7 @@ class Activity extends Core {
 			die();
 		}
 		$this->db->delete("activity_log", array('id'));
+		$this->m_activity->getReset();
 		redirect('admin/activiti');
 	}
 
