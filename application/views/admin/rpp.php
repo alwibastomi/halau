@@ -19,6 +19,7 @@
       <table class="table tablehead datatable-ku" data-func="datarpp" data-meth="datarpp_datatable" style="width:100%">
         <thead>
           <tr class="thead">
+            <th data-orderable="false">Aksi</th>
             <th>Id_detail</th>
             <th>Id_kelas</th>
             <th>Id_matpel</th>
@@ -33,7 +34,7 @@
             <th>Tp5</th>
             <th>Bab</th>
             <th>Halaman</th>
-            <th data-orderable="false">Aksi</th>
+            
             
           </tr>
         </thead>
