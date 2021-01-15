@@ -14,7 +14,7 @@
         <div class="col-lg-3" style=" border-right: 1px solid black; ">
           
           <img style="" class="img-profile rounded-circle" src="<?= base_url('images/profil/default.jpg') ?>">
-          <p class="text-center mt-2"><?= $nama ?></p>
+          <p class="text-center mt-2 mr-3"><?= $nama ?></p>
         </div>
         <div class="col-lg-4">
           <h3 class="mt-3">INFORMASI</h3>

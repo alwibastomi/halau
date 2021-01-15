@@ -22,6 +22,7 @@ $(document).ready(function(){
           "sLast":     "Terakhir"
         }
       },
+      "scrollX": true,
       "autoWidth": false,
       "aLengthMenu": [[5, 10, 15, 20, 25], [5, 10, 15, 20, 25]],
       "pageLength": 5,

@@ -24,7 +24,7 @@ class Login extends Core{
 
 				$this->user_model->addData('activity_log', $data);
 
-				redirect('Admin/dashboard');
+				redirect('Dashboard');
 			}else {
 				$data['alert'] = 'gagal';
 				$data['title'] = "Login";

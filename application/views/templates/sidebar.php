@@ -13,8 +13,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>" >
-                <a class="nav-link" href="<?= base_url('dashboard') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Dashboard"){echo "active";}?>" >
+                <a class="nav-link" href="<?= base_url('Dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -83,8 +83,8 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Datarpp"){echo "active";}?>">
+                <a class="nav-link" href="<?= site_url('Datarpp') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data RPP</span></a>
             </li>

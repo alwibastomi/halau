@@ -17,7 +17,7 @@
       <table class="table tablehead datatable-ku" data-func="menu" data-meth="menu_datatable" style="width:100%">
         <thead>
           <tr class="thead">
-            <th data-orderable="false">No</th>
+            
             <th>Menu</th>
             <th>Href</th>
             <th data-orderable="false">Aksi</th>

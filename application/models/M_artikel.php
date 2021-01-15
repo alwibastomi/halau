@@ -14,7 +14,7 @@ class M_artikel extends CI_Model
 
   public function getAllArtikel()
   {
-    $this->db->select("*");
+    $this->db->select('*');
     $this->db->from("artikel");
     return $this->db->get()->result();
   }
@@ -38,7 +38,7 @@ class M_artikel extends CI_Model
 
   public function datatableArtikel()
   {
-    $array = array("id","header", "id_isi","pakai");
+    $array = array("id","header", "isi","pakai");
     $start = $this->_post('start');
     $offset = $this->_post('length');
     if ($start != null && $offset != null) {
@@ -50,7 +50,7 @@ class M_artikel extends CI_Model
       $key = $search['value'];
       $this->db->like('id', $key);
       $this->db->or_like('header', $key);
-      $this->db->or_like('id_isi', $key);
+      $this->db->or_like('isi', $key);
       $this->db->or_like('pakai', $key);
     }
 
@@ -88,11 +88,12 @@ class M_artikel extends CI_Model
       $btn = ' <a href="'.site_url('Artikel/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>
       <a href="'.site_url('Artikel/detail/'.$val->id).'" class="btn btn-success" style="text-align: center;"  title="Detail">Detail</a>
       <a href="'.site_url('Artikel/hapus/'.$val->id).'" class="btn btn-danger" style="text-align: center;"  title="Delete">Delete</a>';
+      $sub = substr($val->isi,3,10);
 
       $output['data'][] = array(
         $val->id,
         $val->header,
-        $val->isi,
+        $sub,
         $pil,
         $btn
       );

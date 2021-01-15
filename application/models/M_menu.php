@@ -83,7 +83,7 @@ class M_menu extends CI_Model
       $btn = '<a href="'.site_url('Menu/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>';
 
       $output['data'][] = array(
-        $val->id,
+       
         $val->menu,
         $val->href,
         $btn

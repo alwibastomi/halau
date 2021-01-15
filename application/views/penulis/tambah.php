@@ -46,7 +46,7 @@ if ($alert == 'sukses') { ?>
               <select class="form-control" name="level" style="border-radius: 0;">
                 <option value="1">1</option>
                 <option value="2">2</option>
-                <option value="3">3</option>
+                
               </select>
             </div>
           </div>
