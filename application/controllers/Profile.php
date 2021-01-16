@@ -7,4 +7,8 @@ class Profile extends Core {
 		
 		$this->renderadm('admin/profile', $data);
 	}
+	public function edit(){
+		$data['title'] = 'Edit Profile';
+		$this->renderadm('profile/edit',$data);
+	}
 }
