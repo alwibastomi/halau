@@ -20,22 +20,15 @@
         <thead>
           <tr class="thead">
             <th data-orderable="false">Aksi</th>
-            <th>Id_detail</th>
             <th>Id_kelas</th>
             <th>Id_matpel</th>
             <th>Semester</th>
             <th>Pertemuan</th>
             <th>Kd</th>
             <th>Materi</th>
-            <th>Tp1</th>
-            <th>Tp2</th>
-            <th>Tp3</th>
-            <th>Tp4</th>
-            <th>Tp5</th>
             <th>Bab</th>
             <th>Halaman</th>
-            
-            
+               
           </tr>
         </thead>
         <tbody>

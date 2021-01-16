@@ -54,11 +54,6 @@ class M_rpp extends CI_Model
       $this->db->or_like('pertemuan', $key);
       $this->db->or_like('kd', $key);
       $this->db->or_like('materi', $key);
-      $this->db->or_like('tp1', $key);
-      $this->db->or_like('tp2', $key);
-      $this->db->or_like('tp3', $key);
-      $this->db->or_like('tp4', $key);
-      $this->db->or_like('tp5', $key);
       $this->db->or_like('bab', $key);
       $this->db->or_like('halaman', $key);
     }
@@ -71,9 +66,12 @@ class M_rpp extends CI_Model
       $this->db->order_by($ord , $by);
     }
 
-    $this->db->select("SQL_CALC_FOUND_ROWS *" ,FALSE);
-    $this->db->from("detail_rpp");
-    $this->db->order_by("id_detail", "DESC");
+    $this->db->select("det.id_detail as id_detail, kelas.kelas as kelas, matpel.nama_matpel as nama_matpel, semester.semester as semester, det.pertemuan as pertemuan, det.kd as kd, det.materi as materi, det.bab as bab, det.halaman as halaman" ,FALSE);
+    $this->db->from("detail_rpp as det");
+    $this->db->join('kelas', 'kelas.id = det.id_kelas');
+    $this->db->join('matpel', 'matpel.id = det.id_matpel');
+    $this->db->join('semester', 'semester.id = det.id_semester');
+    $this->db->order_by("det.id_detail", "DESC");
     $sql = $this->db->get();
     $q = $sql->result();
     $this->db->select("FOUND_ROWS() AS total_row");
@@ -97,18 +95,12 @@ class M_rpp extends CI_Model
 
       $output['data'][] = array(
         $btn,
-        $val->id_detail,
-        $val->id_kelas,
-        $val->id_matpel,
-        $val->id_semester,
+        $val->kelas,
+        $val->nama_matpel,
+        $val->semester,
         $val->pertemuan,
         $val->kd,
         $val->materi,
-        $val->tp1,
-        $val->tp2,
-        $val->tp3,
-        $val->tp4,
-        $val->tp5,
         $val->bab,
         $val->halaman
         
