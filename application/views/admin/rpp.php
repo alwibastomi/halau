@@ -11,7 +11,7 @@
   <div class="card">
     <div class="card-body">
 
-      <h3 class="text-center">Artikel</h3>
+      <h3 class="text-center">DATA RPP</h3>
       
       <a href="<?= site_url('rpp/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
       
@@ -20,8 +20,8 @@
         <thead>
           <tr class="thead">
             <th data-orderable="false">Aksi</th>
-            <th>Id_kelas</th>
-            <th>Id_matpel</th>
+            <th>kelas</th>
+            <th>matpel</th>
             <th>Semester</th>
             <th>Pertemuan</th>
             <th>Kd</th>
