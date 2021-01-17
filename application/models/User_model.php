@@ -11,16 +11,6 @@ class User_model extends CI_Model
   public function _post($name , $xss = true){
     return $this->input->post($name , $xss);
   }
-  public function addPenAng()
-  {
-
-    $data = array(
-      'username' => strtolower($this->input->post('username')),
-      'password' => md5("akusayangkamu:*".$this->input->post('password')),
-      'nama_lengkap' => $this->input->post('nama_lengkap')
-    );
-    return $this->db->insert("tb_siswa", $data);
-  }
   public function getUsername($db, $where)
   {
     $this->db->select("count(*) as total");
@@ -85,7 +75,7 @@ class User_model extends CI_Model
           'isLogin' => true,
           'email' => $query->email,
           'nama' => $query->nama,
-          'level' => $level
+          'level' => $query->level
         );
         $this->session->set_userdata($data);
         return true;

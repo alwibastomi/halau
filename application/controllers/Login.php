@@ -21,7 +21,6 @@ class Login extends Core{
 					'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Login',
 					'date_time' => date('Y-m-d H:i:s')
 				);
-
 				$this->user_model->addData('activity_log', $data);
 
 				redirect('Dashboard');

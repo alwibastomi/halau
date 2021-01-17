@@ -27,8 +27,8 @@ class Penulis extends Core {
 			die();
 		}
 
-		$this->form_validation->set_rules('email', 'password', 'required');
-		$this->form_validation->set_rules('password', 'password', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
 
 
 		if($this->form_validation->run() == false){
@@ -37,7 +37,7 @@ class Penulis extends Core {
 			$data = array(
 				'email' => $this->input->post('email'),
 				'nama' => $this->input->post('nama'),
-				'password' => md5("akusayangkamu:*".$this->input->post('password')),
+				'password' => md5("Maaf:(".$this->input->post('password')),
 				'level' => $this->input->post('level')
 			);
 

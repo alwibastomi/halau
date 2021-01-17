@@ -15,7 +15,7 @@
           
           <img style="" class="img-profile rounded-circle" src="<?= base_url('images/profil/default.jpg') ?>">
           <p class="text-center mt-2 mr-3"><?= $nama ?></p>
-          <a href="<?= site_url('Profile/edit') ?>" class="btn btn-primary btn-tambah " style="margin-left: 35%;">Edit</a>
+          <a href="<?= site_url('Profile/edit/'.$email) ?>" class="btn btn-primary btn-tambah " style="margin-left: 35%;">Edit</a>
         </div>
         <div class="col-lg-4">
           <h3 class="mt-3">INFORMASI</h3>
@@ -25,7 +25,14 @@
             <span style="padding-top:-50px;"><?= $email ?></span>
           
             <p style="color: black; font-weight: 600; margin-bottom: 0;">Level </p>
-            <span style="padding-top:-50px;"><?= $level ?></span>
+            <?php 
+            if ($level == 1) {
+              $lala = "Owner";
+            }else{
+              $lala = "Penulis";
+            }
+             ?>
+            <span style="padding-top:-50px;"><?= $lala ?></span>
             
           </div>
         </div>

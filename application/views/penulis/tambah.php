@@ -44,9 +44,8 @@ if ($alert == 'sukses') { ?>
             <label class="col-sm-2 col-form">Level</label>
             <div class="col-sm-10">
               <select class="form-control" name="level" style="border-radius: 0;">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                
+                <option value="1">Owner</option>
+                <option value="2">Penulis</option>
               </select>
             </div>
           </div>
