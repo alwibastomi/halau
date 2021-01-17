@@ -89,9 +89,9 @@ class M_rpp extends CI_Model
 
     foreach ($q as $val) {
       
-      $btn = ' <a href="'.site_url('Datarpp/edit/'.$val->id_detail).'" class="btn btn-primary ml-3 mb-1 pr-2" style="text-align: center;"  data-toggle="tooltip" title="Edit"><i class="fas fa-edit"></i></i></a>
-      <a href="'.site_url('Datarpp/detail/'.$val->id_detail).'" class="btn btn-success ml-3 mb-1 " style="text-align: center; padding:6px 11px 6px 11px;"  title="Detail"><i class="fas fa-info-circle"></i></a>
-      <a href="'.site_url('Datarpp/hapus/'.$val->id_detail).'" class="btn btn-danger ml-3" style="text-align: center;"  title="Delete"><i class="fas fa-trash"></i></a>';
+      $btn = ' <a href="'.site_url('Datarpp/edit/'.$val->id_detail).'" class="btn btn-primary " style="text-align: center; padding:6px 8px 6px 8px;"  data-toggle="tooltip" title="Edit" ><i class="fas fa-edit"></i></i></a>
+      <a href="'.site_url('Datarpp/detail/'.$val->id_detail).'" class="btn btn-success " style="text-align: center; padding:6px 8px 6px 8px;"  title="Detail"><i class="fas fa-info-circle"></i></a>
+      <a href="'.site_url('Datarpp/hapus/'.$val->id_detail).'" class="btn btn-danger " style="text-align: center; padding:6px 10px 6px 10px;"  title="Delete"><i class="fas fa-trash"></i></a>';
 
       $output['data'][] = array(
         $btn,

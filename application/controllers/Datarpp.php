@@ -21,8 +21,13 @@ class Datarpp extends Core {
 		$data['allDatarpp'] = $this->m_rpp->getAllDatarpp();
 		$this->renderadm('admin/rpp', $data);
 	}
+	public function tambah(){
+		$data['title'] = 'Tambah Rpp';
+		$this->renderadm('rpp/tambah',$data);
 
-	
+	}
+
+
 	public function datarpp_datatable()
 	{
 		$datarpp = $this->m_rpp->datatableDatarpp();

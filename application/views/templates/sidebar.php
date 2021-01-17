@@ -28,8 +28,8 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if($this->uri->segment(1)=="penulis"){echo "active";}?>">
-                <a class="nav-link " href="<?= base_url('penulis') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Penulis"){echo "active";}?>">
+                <a class="nav-link " href="<?= base_url('Penulis') ?>">
                     <i class="fas fa-fw fa-pen-alt"></i>
                     <span>Tambah Penulis</span></a>
             </li>
@@ -56,8 +56,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item <?php if($this->uri->segment(1)=="artikel"){echo "active";}?>">
-                <a class="nav-link" href="<?= base_url('artikel') ?>">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Artikel"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('Artikel') ?>">
                     <i class="fas fa-fw fa-file-alt"></i>
                     <span>Artikel</span></a>
             </li>
