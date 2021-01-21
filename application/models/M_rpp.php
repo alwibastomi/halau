@@ -11,7 +11,17 @@ class M_rpp extends CI_Model
   function _post($name , $xss = true){
     return $this->input->post($name , $xss);
   }
-
+  public function getCountRpp($db) {
+    $this->db->select_max("id_tp");
+    $this->db->from($db);
+    $this->db->order_by('id_tp', 'desc');
+    $q = $this->db->get()->row();
+    return $q->id_isi;  
+  }
+    public function add_rpp($table, $data)
+  {
+    $this->db->insert($table, $data);
+  }
   public function getAllDatarpp()
   {
     $this->db->select('*');
