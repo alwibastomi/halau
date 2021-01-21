@@ -33,10 +33,10 @@
           </div>
 
           <div class="form-group row" >
-                      <label class="col-sm-2 col-form-label">KD</label>
+                      <label class="col-sm-2 col-form-label">TP</label>
                           <div class="col-lg-10">
                                   <div class="input-group mb-3">
-                                      <input type="text" name="title[]" class="form-control m-input" placeholder="KD" autocomplete="off">    
+                                      <input type="text" name="tp1" id="tp1" onblur="lololo('tp1')" class="form-control m-input" placeholder="TP 1" autocomplete="off">    
                                           <button id="removeRow" type="button" class="btn btn-danger ml-2"><i class="fas fa-minus"></i></button>
                                           <button id="addRow" type="button" class="btn btn-success ml-2"><i class="fas fa-plus"></i></button>
                     </div>
@@ -50,9 +50,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Id_tp</label>
+            <label class="col-sm-2 col-form-label">KD</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="tp"   name="id_tp">
+              <input type="text" class="form-control" id="" placeholder="kd"   name="kd">
             </div>
           </div>
           <div class="form-group row">
@@ -83,25 +83,52 @@
 </div>
 <script type="text/javascript">
         // add row
+        z = 1;
+
+        var isi = [];
         $("#addRow").click(function () {
+          z = z + 1;
+          x = z-1;
             var html = '';
-            html += '<div class="form-group row" id="inputFormRow">';
+            html += '<div class="form-group row" id="inputFormRow'+z+'">';
             html += '<label class="col-sm-2 col-form-label"></label>';
             html += '<div class="col-lg-10">';
             html += '<div class="input-group mb-3">';
-            html += '<input type="text" name="title[]" class="form-control m-input" placeholder="KD" autocomplete="off">';
-            
-            html += '<button id="removeRow" type="button" class="btn btn-danger ml-2"><i class="fas fa-minus"></button>';
-            
+            html += '<input type="text" name="tp'+z+'" id="tp'+z+'" onblur="lololo(\'tp\'+z)" class="form-control m-input" placeholder="TP'+z+'" autocomplete="off">';
+            html += '<div id="place_button'+z+'">';
+            html += '<button id="removeRow'+z+'" onClick="xc('+z+');" type="button" class="btn btn-danger ml-2"><i class="fas fa-minus"></button>';
+            html += '<div>';
             html += '</div>';
             html += '</div>';
              html += '</div>';
 
             $('#newRow').append(html);
+if (x != 1) {
+            $('#removeRow'+x).remove();
+}
+  
         });
+function xc(l) {
+  s = l-1;
+  z = z - 1;
+  $('#inputFormRow'+l).remove();
+  $('#place_button'+s).append('<button id="removeRow'+s+'" onClick="xc('+s+');" type="button" class="btn btn-danger ml-2"><i class="fas fa-minus"></button>')
+  $('#tp'+l).val("");
+                          isi.splice(z,1);
+                          console.log(isi)
 
-        // remove row
-        $(document).on('click', '#removeRow', function () {
-            $(this).closest('#inputFormRow').remove();
-        });
+}
+
+                function lololo(haha) {
+                    var uwu = $('#'+haha).val();
+                    var haha = haha.substr(2,haha.length);
+                    var haha = haha-1;
+                    isi[haha] = uwu;
+                    console.log(isi)
+                };
+
+        // // remove row
+        // $(document).on('click', '#removeRow', function () {
+        //     $(this).closest('#inputFormRow').remove();
+        // });
     </script>

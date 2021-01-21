@@ -1,7 +1,6 @@
 <?php 
 if ($alert == 'sukses') { ?>
   <script type="text/javascript">
-    alert('Data Tersimpan')
     window.location = "<?= site_url('Penulis') ?>";
   </script>
 <?php }?>

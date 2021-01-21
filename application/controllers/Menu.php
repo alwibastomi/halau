@@ -52,6 +52,8 @@ class Menu extends Core {
 
 			$this->user_model->editData('menu', $where, $data);
 			$data['alert'] = 'sukses';
+
+			$this->session->set_flashdata('edit_pesan','pesan');
 		}
 		$this->renderadm('menu/edit', $data);
 	}

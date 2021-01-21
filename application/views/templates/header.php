@@ -121,14 +121,14 @@
         }
         
         .toast-body{
-            border-left: 4px solid #404040;
-            color: black;
+            border-left: 4px solid #111212;
+            color: #1c1c1b;
         }
         .cek{
             margin-top: 10px;
             position: absolute;
             font-size: 30px;
-            color: black;
+            color: #171717;
         }
         .message-j strong{
             font-size: 18px;
@@ -141,7 +141,15 @@
             margin-bottom: -6px;
         }
         .toast{
+            margin: 0 auto;
+            position: fixed;
+            z-index: 9999;
+            margin-left: 82%;
+            width: 16.5%;
+            margin-top: 5%;
             transition: all 1s ;
+            background-color: #f5fffe!important;
+
         }
         
          
@@ -154,22 +162,36 @@
 
 
     <body id="page-top ">
-    <?php if($this->session->flashdata('pesan')): ?>
-        <div class="position-realetive ">
-                <div class="position-absolute bottom-right-toast">
+    <?php if($this->session->flashdata('pesan')){ ?>
                     <div class="toast d-flex align-items-center text-black bg-light border-0 mb-5 mr-4" role="alert" aria-live="assertive" aria-atomic="true">
                               <div class="toast-body message-j">
                                 <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
 
-                            <p class="message-i" style="margin-right: 50px; margin-top: -6px; padding-bottom: 5px; padding-left: 4px;">Sukses Tambah Data</p>
+                            <p class="message-i" style="">Sukses Tambah Data</p>
                           </div>
-                          <!-- <button type="button" class="btn-close btn-close-black ms-auto me-2 mb-4 mr-2" data-bs-dismiss="toast" aria-label="Close"></button> -->
+                          
                         </div>
                 </div>
-            </div>
-        </div>
-        <?php endif ?>
-        
+        <?php }else if($this->session->flashdata('edit_pesan')){ ?>
+        <div class="toast d-flex align-items-center text-black bg-light border-0 mb-5 mr-4" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-body message-j">
+                                <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
 
+                            <p class="message-i" style="">Sukses Edit Data</p>
+                          </div>
+                          
+                        </div>
+                </div>
+<?php }else if($this->session->flashdata('hapus_pesan')){ ?>
+    <div class="toast d-flex align-items-center text-black bg-light border-0 mb-5 mr-4" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-body message-j">
+                                <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
+
+                            <p class="message-i" style="">Sukses Hapus Data</p>
+                          </div>
+                          
+                        </div>
+                </div>
+<?php } ?>
         <!-- Page Wrapper -->
         <div id="wrapper">

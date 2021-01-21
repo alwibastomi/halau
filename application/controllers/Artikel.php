@@ -47,6 +47,10 @@ class Artikel extends Core {
 				'date_time' => date('Y-m-d H:i:s')
 			);
 
+			if ($this->input->post('pakai') == "1") {
+			$this->user_model->editya();
+			}
+
 			$this->user_model->addData('activity_log', $data1);
 
 			$this->user_model->addData('artikel', $data);
@@ -56,6 +60,7 @@ class Artikel extends Core {
 		$data['title'] = 'Tambah Artikel';
 		$this->renderadm('artikel/tambah',$data);
 	}
+
 	public function edit($id){
 		if(!$this->isLogin){
 			redirect('Auth');
@@ -86,10 +91,14 @@ class Artikel extends Core {
 				'date_time' => date('Y-m-d H:i:s')
 			);
 
+			if ($this->input->post('pakai') == "1") {
+			$this->user_model->editya();
+			}
 			$this->user_model->addData('activity_log', $data1);
 
 			$this->user_model->editData('artikel', $where, $data);
 			$data['alert'] = 'sukses_edit';
+			$this->session->set_flashdata('edit_pesan','pesan');
 		}
 		$data['title'] = 'Edit Artikel';
 		$this->renderadm('artikel/tambah',$data);
@@ -112,6 +121,7 @@ class Artikel extends Core {
 
 		$this->db->delete("artikel", array('id' => $id));
 		$data['alert'] = 'sukses';
+			$this->session->set_flashdata('hapus_pesan','pesan');
 		$this->renderadm('admin/artikel', $data);
 	}
 

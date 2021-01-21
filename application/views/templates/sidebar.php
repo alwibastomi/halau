@@ -61,8 +61,8 @@
                     <i class="fas fa-fw fa-file-alt"></i>
                     <span>Artikel</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Iklan"){echo "active";}?>">
+                <a class="nav-link" href="<?= base_url('Iklan') ?>">
                     <i class="fas fa-fw fa-ad"></i>
                     <span>Iklan</span></a>
             </li>

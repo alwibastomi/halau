@@ -1,7 +1,8 @@
 <?php 
 if ($alert == 'sukses') { ?>
   <script type="text/javascript">
-    window.location = "<?= site_url('Menu') ?>";
+    
+    window.location = "<?= site_url('Iklan') ?>";
   </script>
 <?php }?>
 <div class="container-fluid">
@@ -22,16 +23,16 @@ if ($alert == 'sukses') { ?>
         <div class="col-md-6">
           <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Menu</label>
+              <label class="col-sm-2 col-form-label">Script JS</label>
               <div class="col-sm-10">
-                <input type="hidden" class="form-control" id="id" value="<?= $menu->id ?>"  name="id">
-                <input type="text" class="form-control" id="menu" value="<?= $menu->menu ?>"  name="menu">
+                <input type="hidden" class="form-control" id="id" value="<?= $iklan->id ?>"  name="id">
+                <input type="text" class="form-control" id="script_js" value="<?= $iklan->script_js ?>"  name="script_js">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label">Href</label>
+              <label class="col-sm-2 col-form-label">Place</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="href" value="<?= $menu->href ?>" name="href">
+                <input type="text" class="form-control" id="place" value="<?= $iklan->place ?>" name="place">
               </div>
             </div>
             <div class="mt-4">

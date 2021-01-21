@@ -22,12 +22,12 @@ if ($edit) {
 ?>
 <?php if ($alert == 'sukses') { ?>
   <script type="text/javascript">
-    alert('Data Tersimpan')
+    
     window.location = "<?= site_url('Artikel') ?>";
   </script>
 <?php }else if ($alert == 'sukses_edit'){ ?>
   <script type="text/javascript">
-    alert('Edit Tersimpan')
+    
     window.location = "<?= site_url('Artikel') ?>";
   </script>
 <?php } ?>
@@ -65,20 +65,13 @@ if ($edit) {
             <div class="col-sm-10">
               <select class="form-control" name="pakai" style="border-radius: 0;">
                 <?php
-                // $qa = array('Ya', 'Tidak');
-
-                if(!empty($pakai)){
-                  if ($pakai == 1) {
+                  if ($pakai == "1") {
                     echo "<option value='1' selected>Ya</option>";
                     echo "<option value='2'>Tidak</option>";
                   }else{
                     echo "<option value='2' selected>Tidak</option>";
                     echo "<option value='1'>Ya</option>";
                   }
-                }else{
-                  echo '<option value="1">Ya</option>';
-                  echo '<option value="2">Tidak</option>';
-                }
                 ?>
               </select>
             </div>

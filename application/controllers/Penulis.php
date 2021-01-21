@@ -50,6 +50,7 @@ class Penulis extends Core {
 
 			$this->user_model->addData('user', $data);
 			$data['alert'] = 'sukses';
+			$this->session->set_flashdata('pesan','pesan');
 		}
 
 		$data['title'] = 'Tambah Data Penulis';
@@ -73,6 +74,7 @@ class Penulis extends Core {
 
 		$this->db->delete("user", array('email' => $email));
 		$data['alert'] = 'sukses';
+		$this->session->set_flashdata('hapus_pesan','pesan');
 		$this->renderadm('admin/penulis', $data);
 	}
 

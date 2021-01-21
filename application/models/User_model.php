@@ -30,6 +30,12 @@ class User_model extends CI_Model
     return $this->db->update($table, $data);
   }
 
+  public function editya()
+  {
+    $data = array('pakai' => 'Tidak' );
+    return $this->db->update('artikel', $data);
+  }
+
   public function getData($table, $where)
   {
     $this->db->select("*");
