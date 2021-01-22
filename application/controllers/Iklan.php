@@ -19,6 +19,15 @@ class Iklan extends Core {
 		$data['allIklan'] = $this->m_iklan->getAllIklan();
 		$this->renderadm('admin/iklan', $data);
 	}
+	public function tambah(){
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
+		$data['title'] = 'Tambah Iklan';
+		$this->renderadm('iklan/tambah',$data);
+
+	}
 
 	public function edit($id){
 		if(!$this->isLogin){

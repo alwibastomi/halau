@@ -6,9 +6,7 @@
   <link rel="shortcut icon" href="<?= site_url('assets/images/navlogo.png'); ?>" />
   <link rel="icon" type="image/png" href="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    RPP Online
-  </title>
+  <title><?= $title; ?></title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
   name='viewport' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -411,16 +409,16 @@
               <a href="<?= site_url('L_Page') ?>" style="color: grey;" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#" style="color: grey;" class="nav-link">Disclaimer</a>
+              <a href="<?= site_url('L_Page/disclaimer') ?>" style="color: grey;" class="nav-link">Disclaimer</a>
             </li>
             <li class="nav-item">
-              <a href="#" style="color: grey;" class="nav-link">Privacy Policy</a>
+              <a href="<?= site_url('L_Page/privacy') ?>" style="color: grey;" class="nav-link">Privacy Policy</a>
             </li>
             <li class="nav-item">
-              <a href="#" style="color: grey;" class="nav-link">Contact</a>
+              <a href="<?= site_url('L_Page/Contact') ?>" style="color: grey;" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="#" style="color: grey;" class="nav-link">About</a>
+              <a href="<?= site_url('L_Page/about') ?>" style="color: grey;" class="nav-link">About</a>
             </li>
           </ul>
         </div>

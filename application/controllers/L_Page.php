@@ -12,21 +12,26 @@ class L_page extends Core {
 
 	public function Disclaimer()
 	{
-		$this->renderpage('landing_page/disclaimer');
+		$data['title'] = 'Disclaimer';
+		
+		$this->renderpage('landing_page/disclaimer',$data);
 	}
 
 	public function Privacy()
 	{
-		$this->renderpage('landing_page/privacy');
+		$data['title'] = 'Privacy';
+		$this->renderpage('landing_page/privacy',$data);
 	}
 
 	public function About()
 	{
-		$this->renderpage('landing_page/about');
+		$data['title'] = 'About';
+		$this->renderpage('landing_page/about',$data);
 	}
 
 	public function Contact()
 	{
-		$this->renderpage('landing_page/about');
+		$data['title'] = 'Contact';
+		$this->renderpage('landing_page/contact',$data);
 	}
 }

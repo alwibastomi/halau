@@ -16,14 +16,14 @@ class Core extends CI_Controller {
 		$this->isLogin = $this->session->userdata('isLogin');
 	}
 
-	public function renderpage($view, $datas = array())
+	public function renderpage($view, $data = array())
 	{
 
 		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');
-		$this->load->view('template/header');
-		$this->load->view($view, $datas);
+		$this->load->view('template/header',$data);
+		$this->load->view($view, $data);
 		$this->load->view('template/footer');
 	}
 	public function renderlog($view,$data = array()){

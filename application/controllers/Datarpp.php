@@ -22,8 +22,16 @@ class Datarpp extends Core {
 		$this->renderadm('admin/rpp', $data);
 	}
 	public function tambah(){
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
 		$data['title'] = 'Tambah Rpp';
+		$data['kelas'] = $this->admin_model->getAllKelas();
+		$data['matpel'] = $this->admin_model->getAllMatpel();
+		$data['semester'] = $this->admin_model->getAllSemester();
 		$this->renderadm('rpp/tambah',$data);
+
 
 	}
 

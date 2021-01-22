@@ -12,6 +12,7 @@
     <div class="card-body">
 
       <h3 class="text-center">Menu</h3>
+      <a href="<?= site_url('Menu/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
       
       <!-- id="tableactiviti" tablehead  -->
       <table class="table tablehead datatable-ku" data-func="menu" data-meth="menu_datatable" style="width:100%">

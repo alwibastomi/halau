@@ -7,22 +7,44 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-7">
         <form action="" id="uwu" method="post" enctype="multipart/form-data">
-          <div class="form-group row">
-            <label  class="col-sm-2 col-form-label">Detail</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control"  placeholder="Detail" name="id_detail">
-            </div>
-          </div>
+          
           <div class="form-group row">
             <label  class="col-sm-2 col-form-label">Kelas</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control"  placeholder="Kelas" name="id_kelas">
+             <select name="kelas" id="kelas" class="form-control" required>
+                      <option value="">- PILIH -</option>
+                      <?php 
+                      foreach ($kelas as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->kelas ?></option>
+                      <?php }?>
+                    </select>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Matpel</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="Matpel"   name="id_matpel">
+              <select name="pelajaran" id="pelajaran" class="form-control" required>
+                      <option value="">- PILIH -</option>                      
+                      <?php 
+                      foreach ($matpel as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->nama_matpel ?></option>
+                      <?php }?>
+                    </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Semester</label>
+            <div class="col-sm-10">
+              <select name="pelajaran" id="pelajaran" class="form-control" required>
+                      <option value="">- PILIH -</option>                      
+                      <?php 
+                      foreach ($semester as $key) { ?>
+
+                        <option value="<?= $key->id ?>"><?= $key->semester ?></option>
+                      <?php }?>
+                    </select>
             </div>
           </div>
           <div class="form-group row">

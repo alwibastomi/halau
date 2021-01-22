@@ -12,6 +12,7 @@
     <div class="card-body">
 
       <h3 class="text-center">Iklan</h3>
+       <a href="<?= site_url('Iklan/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
       
       <!-- id="tableactiviti" tablehead  -->
       <table class="table tablehead datatable-ku" data-func="iklan" data-meth="iklan_datatable" style="width:100%">

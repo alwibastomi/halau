@@ -19,6 +19,17 @@ class Menu extends Core {
 		$data['allMenu'] = $this->m_menu->getAllMenu();
 		$this->renderadm('admin/menu', $data);
 	}
+	public function tambah(){
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
+		$data['title'] = 'Tambah Menu';
+		
+		$this->renderadm('menu/tambah',$data);
+
+
+	}
 
 	public function edit($id){
 		if(!$this->isLogin){
