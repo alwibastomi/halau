@@ -21,14 +21,34 @@ class Menu extends Core {
 	}
 	public function tambah(){
 		if(!$this->isLogin){
-			redirect('Auth');
+			redirect('Login');
 			die();
 		}
+
+		$this->form_validation->set_rules('menu', 'Menu', 'required');
+		$this->form_validation->set_rules('href', 'Href', 'required');
+		if($this->form_validation->run() == false){
+			$data['alert'] = '';
+		}else{
+			$data = array(
+				'menu' => $this->input->post('menu'),
+				'href' => $this->input->post('href'),
+				'pakai' => $this->input->post('pakai')
+			);
+
+			$data1 = array(
+				'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Menambah Menu <b>'.$this->input->post('header').'</b>',
+				'date_time' => date('Y-m-d H:i:s')
+			);
+
+			$this->user_model->addData('activity_log', $data1);
+
+			$this->user_model->addData('menu', $data);
+			$data['alert'] = 'sukses';
+			$this->session->set_flashdata('pesan','pesan');
+		}
 		$data['title'] = 'Tambah Menu';
-		
 		$this->renderadm('menu/tambah',$data);
-
-
 	}
 
 	public function edit($id){
@@ -51,7 +71,8 @@ class Menu extends Core {
 
 			$data = array(
 				'menu' => $this->input->post('menu'),
-				'href' => $this->input->post('href')
+				'href' => $this->input->post('href'),
+				'pakai' => $this->input->post('pakai')
 			);
 
 			$data1 = array(

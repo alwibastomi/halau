@@ -5,6 +5,8 @@ class L_page extends Core {
 	public function index()
 	{
 		$data['title'] = 'RPP online';
+		$data['nav'] = $this->admin_model->getanu('menu');
+		$data['aaaa'] = $this->admin_model->getArtikel();
 		$data['kelas'] = $this->admin_model->getAllKelas();
 		$data['matpel'] = $this->admin_model->getAllMatpel();
 		$data['semester'] = $this->admin_model->getAllSemester();

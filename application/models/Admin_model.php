@@ -12,25 +12,41 @@ class Admin_model extends CI_Model
 		return $this->input->post($name , $xss);
 	}
 
+  public function getArtikel()
+  {
+    $this->db->select("*");
+    $this->db->from("artikel");
+    $this->db->where('pakai', '1');
+    return $this->db->get()->row();
+  }
+
+  public function getanu($table)
+  {
+    $this->db->select("*");
+    $this->db->from($table);
+    $this->db->where('pakai', '1');
+    return $this->db->get()->result();
+  }
+
   public function getAllKelas()
   {
     $this->db->select("*");
     $this->db->from("kelas");
     return $this->db->get()->result();
   }
-    public function getAllMatpel()
+  public function getAllMatpel()
   {
     $this->db->select("*");
     $this->db->from("matpel");
     return $this->db->get()->result();
   }
-      public function getAllSemester()
+  public function getAllSemester()
   {
     $this->db->select("*");
     $this->db->from("semester");
     return $this->db->get()->result();
   }
-        public function getAllRpp()
+  public function getAllRpp()
   {
     $this->db->select("*");
     $this->db->from("detail_rpp");

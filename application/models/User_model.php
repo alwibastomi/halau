@@ -32,7 +32,7 @@ class User_model extends CI_Model
 
   public function editya()
   {
-    $data = array('pakai' => 'Tidak' );
+    $data = array('pakai' => '2' );
     return $this->db->update('artikel', $data);
   }
 

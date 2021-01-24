@@ -1,7 +1,7 @@
 <?php 
 if ($alert == 'sukses') { ?>
   <script type="text/javascript">
-    
+
     window.location = "<?= site_url('Iklan') ?>";
   </script>
 <?php }?>
@@ -33,6 +33,22 @@ if ($alert == 'sukses') { ?>
               <label class="col-sm-2 col-form-label">Place</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="place" value="<?= $iklan->place ?>" name="place">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Pakai</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="pakai" style="border-radius: 0;">
+                  <?php
+                  if ($iklan->pakai == "1") {
+                    echo "<option value='1' selected>Ya</option>";
+                    echo "<option value='2'>Tidak</option>";
+                  }else{
+                    echo "<option value='2' selected>Tidak</option>";
+                    echo "<option value='1'>Ya</option>";
+                  }
+                  ?>
+                </select>
               </div>
             </div>
             <div class="mt-4">

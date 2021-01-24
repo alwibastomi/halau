@@ -381,56 +381,50 @@
         opacity: 0.6;
         text-shadow: 5px 5px 5px;
         transition: .2s;
-      }*/
+        }*/
 
-    </style>
-  </head>
+      </style>
+    </head>
 
-  <body class="index-page sidebar-collapse">
+    <body class="index-page sidebar-collapse">
 
-    <!-- navbar  -->
-    <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="5" id="navresponsive"> -->
-      <nav class="navbar navbar-expand-lg" id="navresponsive">
-        <div class="container">
-          <div class="navbar-translate">
-            <a class="navbar-brand" href="<?= site_url('L_Page') ?>" rel="tooltip" style="color: rgb(77, 77, 77) !important; font-size: 30px;">
-              Nama Website
-            </a>
-            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" style="color: black">
-            <span class="navbar-toggler-bar bar1" style="color: black !important"></span>
-            <span class="navbar-toggler-bar bar2" style="color: black !important"></span>
-            <span class="navbar-toggler-bar bar3" style="color: black !important"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navigation">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="<?= site_url('L_Page') ?>" style="color: grey;" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= site_url('L_Page/disclaimer') ?>" style="color: grey;" class="nav-link">Disclaimer</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= site_url('L_Page/privacy') ?>" style="color: grey;" class="nav-link">Privacy Policy</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= site_url('L_Page/Contact') ?>" style="color: grey;" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= site_url('L_Page/about') ?>" style="color: grey;" class="nav-link">About</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="sti" id="lala" style="bottom: 0;">
-        <div class="row">
-          <div class="col-md-6 text-right">
-            <p class="stiki">We’ll increase your conversions by by by by</p>
+      <!-- navbar  -->
+      <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="5" id="navresponsive"> -->
+        <nav class="navbar navbar-expand-lg" id="navresponsive">
+          <div class="container">
+            <div class="navbar-translate">
+              <a class="navbar-brand" href="<?= site_url('L_Page') ?>" rel="tooltip" style="color: rgb(77, 77, 77) !important; font-size: 30px;">
+                Nama Website
+              </a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+              aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" style="color: black">
+              <span class="navbar-toggler-bar bar1" style="color: black !important"></span>
+              <span class="navbar-toggler-bar bar2" style="color: black !important"></span>
+              <span class="navbar-toggler-bar bar3" style="color: black !important"></span>
+            </button>
           </div>
-          <div class="col-md-6 text-center">
-            <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav">
+              
+                <!-- <li class="nav-item">
+                <a href="<?= site_url('L_Page') ?>" style="color: grey;" class="nav-link">Home</a>
+                </li> -->
+              <?php foreach ($nav as $lala) { ?>
+                <li class="nav-item">
+                <a href="<?= $lala->href ?>" style="color: grey;" class="nav-link"><?= $lala->menu ?></a>
+                </li>
+              <?php } ?>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="sti" id="lala" style="bottom: 0;">
+          <div class="row">
+            <div class="col-md-6 text-right">
+              <p class="stiki">We’ll increase your conversions by by by by</p>
+            </div>
+            <div class="col-md-6 text-center">
+              <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a>
+            </div>
           </div>
         </div>
-      </div>

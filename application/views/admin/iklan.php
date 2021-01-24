@@ -21,6 +21,7 @@
             
             <th>Script JS</th>
             <th>Place</th>
+            <th>Pakai</th>
             <th data-orderable="false">Aksi</th>
           </tr>
         </thead>

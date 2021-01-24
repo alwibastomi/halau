@@ -51,6 +51,7 @@ class M_iklan extends CI_Model
       $this->db->like('id', $key);
       $this->db->or_like('script_js', $key);
       $this->db->or_like('place', $key);
+      $this->db->or_like('pakai', $key);
     }
 
     $order = $this->_post('order');
@@ -79,13 +80,18 @@ class M_iklan extends CI_Model
     );
 
     foreach ($q as $val) {
-
+      if ($val->pakai == 1) {
+        $pil = 'Ya';
+      }else{
+        $pil = 'Tidak';
+      }
       $btn = '<a href="'.site_url('Iklan/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>';
 
       $output['data'][] = array(
-       
+
         $val->script_js,
         $val->place,
+        $pil,
         $btn
       );
     }

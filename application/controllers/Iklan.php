@@ -21,8 +21,31 @@ class Iklan extends Core {
 	}
 	public function tambah(){
 		if(!$this->isLogin){
-			redirect('Auth');
+			redirect('Login');
 			die();
+		}
+
+		$this->form_validation->set_rules('script_js', 'script_js', 'required');
+		$this->form_validation->set_rules('place', 'place', 'required');
+		if($this->form_validation->run() == false){
+			$data['alert'] = '';
+		}else{
+			$data = array(
+				'script_js' => $this->input->post('script_js'),
+				'place' => $this->input->post('place'),
+				'pakai' => $this->input->post('pakai')
+			);
+
+			$data1 = array(
+				'keterangan' => '<b>'.$this->session->userdata('nama').' </b>Telah Menambah Iklan <b>'.$this->input->post('script_js').'</b>',
+				'date_time' => date('Y-m-d H:i:s')
+			);
+
+			$this->user_model->addData('activity_log', $data1);
+
+			$this->user_model->addData('iklan_js', $data);
+			$data['alert'] = 'sukses';
+			$this->session->set_flashdata('pesan','pesan');
 		}
 		$data['title'] = 'Tambah Iklan';
 		$this->renderadm('iklan/tambah',$data);
@@ -49,7 +72,8 @@ class Iklan extends Core {
 
 			$data = array(
 				'script_js' => $this->input->post('script_js'),
-				'place' => $this->input->post('place')
+				'place' => $this->input->post('place'),
+				'pakai' => $this->input->post('pakai')
 			);
 
 			$data1 = array(
