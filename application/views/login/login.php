@@ -34,7 +34,14 @@ if ($alert == 'gagal') { ?>
                                                 id="password" placeholder="Password" name="password">
                                                 
                                         </div>
-                                        
+
+                                        <div class="form-group" >
+                                           
+                                                   <span ><?=$cap_img;?></span>
+                                                <input  type="text" class="form-control form-control-user mt-2"
+                                                id="kode_captcha" placeholder="Captcha" name="kode_captcha" >
+                                                
+                                        </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
@@ -43,6 +50,7 @@ if ($alert == 'gagal') { ?>
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        
                                     </div>
                                     
                                 </div>
