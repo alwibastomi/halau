@@ -35,7 +35,7 @@ class Login extends Core{
 				$data['alert'] = 'gagal';
 				$data['title'] = "Login";
 				$cap = $this->buat_captcha();
-	        $data['cap_img'] = $cap['image'];
+	            $data['cap_img'] = $cap['image'];
 				$this->renderlog('login/login',$data);
 			}
 		}
@@ -60,7 +60,7 @@ class Login extends Core{
     public function cek_captcha(){
     	$cek = $this->input->post('kode_captcha');
         if($cek === $this->session->userdata('kode_captcha')){
-            return FALSE;
+            return TRUE;
         }else{
             $this->form_validation->set_message('cek_captcha', '%s yang anda input salah!');
             return FALSE;
