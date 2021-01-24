@@ -37,7 +37,15 @@ class M_rpp extends CI_Model
     $this->db->limit(5);
     return $this->db->get()->result();
   }
-
+public function cek($kelas, $matpel, $semester)
+  {
+    $this->db->select("*");
+    $this->db->from("detail_rpp");
+    $this->db->where('id_kelas', $kelas);
+    $this->db->where('id_matpel', $matpel);
+    $this->db->where('id_semester', $semester);
+    return $this->db->get()->result();
+  }
   public function getCountDatarpp()
   {
     $this->db->select("count(id_detail) as total");

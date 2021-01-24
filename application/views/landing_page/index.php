@@ -88,7 +88,7 @@ $date = date('Y-m-d');
             </a>
           </div>
           <h3 class="title text-left" style="color: black;"><b>Isi Detail RPP</b></h3>     
-          <form form role="form" id="myform" action="<?= site_url('RPP') ?>" method="post" enctype="multipart/form-data" style="color: black">   
+          <form role="form" id="myform" method="post" enctype="multipart/form-data" style="color: black">   
             <!-- nama  -->
             <div class="row">
               <div class="col-md-4">
@@ -121,6 +121,19 @@ $date = date('Y-m-d');
             </div>
             <!-- end sekolah  -->
 
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group mt-2">
+                  <label style="color: black;">Masukkan Kepala Sekolah</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="kep_sekolah" class="form-control" placeholder="Nama Kepala Sekolah" required>
+                </div>
+              </div>
+            </div>
             <!-- Tanggal RPP -->
             <div class="row">
               <div class="col-md-4">
@@ -159,7 +172,7 @@ $date = date('Y-m-d');
                     <select name="tahun_ajaran" id="tahun_ajaran" class="form-control" required>
                       <option value="">- PILIH -</option>
                       <?php
-                      for ($tgl = date('Y'); $tgl >= 19; $tgl--) {
+                      for ($tgl = date('Y'); $tgl >= 1999; $tgl--) {
                         echo "<option value=".$tgl.">".$tgl."</option>";
                       }
                       ?>
@@ -225,7 +238,7 @@ $date = date('Y-m-d');
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <select name="pelajaran" id="pelajaran" class="form-control" required>
+                    <select name="semester" id="semester" class="form-control" required>
                       <option value="">- PILIH -</option>                      
                       <?php 
                       foreach ($semester as $key) { ?>
@@ -252,9 +265,25 @@ $date = date('Y-m-d');
 
               <div class="row">
                 <div class="col-md-6">
-                  <button type="submit" class="btn btn-ijo btn-round" id="save">Generate</button>
+                  <button class="btn btn-ijo btn-round" id="uy">Generate</button>
 
                 </div>
+              </div>
+              <div class="kotak-iklan mb-2">
+                <a href="" title="Pasang Iklan">
+                  <img alt="iklan banner" src=""/>
+                </a>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <center><h3>List Download RPP</h3></center>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12" id="list">
+
+                </div>
+
               </div>
               <!-- end  -->
             </form>
@@ -319,23 +348,43 @@ $date = date('Y-m-d');
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
     <!-- end alur  -->
-<!--     <script type="text/javascript">
+    <script type="text/javascript">
+      $('#uy').click(function(l) {
 
-      $('#myform').submit(function(e){
-        e.preventDefault()
+        l.preventDefault();
+        var kelas = $( "#kelas option:selected" ).val();
+
+        var pelajaran = $( "#pelajaran option:selected" ).val();
+
+        var semester = $( "#semester option:selected" ).val();
 
         $.ajax({
           type:'POST',
-          data:new FormData(this),
-          url:'<?= site_url('RPP') ?>',
-          processData: false,
-          contentType: false,  
-          cache:false,
-          async:false,
+          data:'kelas='+kelas+'&pelajaran='+pelajaran+'&semester='+semester,
+          url:'<?= site_url('RPP/cek') ?>',
+          dataType:'JSON',
           success: function(hasil){
-            alert(hasil);
+            var z = 4;
+            var list = '';
+            for (var i = 0; i < hasil.length; i++) {
+              var x = i+1;
+              if (z/4 == 1) {
+                list += '<div class="row">';
+              }
+              list += '<div class="col-md-3"><a href="<?= site_url("RPP/download/'+hasil[i].id_detail+'") ?>" class="btn btn-primary"> Pertemuan '+x+' </a></div>';
+
+              if (i == hasil.length - 1 || z%4 == 3) {
+                list += '</div>'
+              }
+
+            z = z+1;
+            }
+            document.getElementById('list').innerHTML = list;
           }
-        });
+        });    
+        
+
+
+        /* Act on the event */
       });
-    </script> -->
-    <!-- mulai footer -->
+    </script>

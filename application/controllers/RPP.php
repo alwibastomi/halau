@@ -12,18 +12,18 @@ class RPP extends Core {
 		$this->level = $this->session->userdata('level');
 	}
 
-	public function index()
+	public function index($dat)
 	{
 
-
-
+	}
+	public function download($dat)
+	{
+		$data['id'] = $dat;
+		$data['title'] = 'RPP online';
+		$this->renderpage('rpp/index', $data);
 	}
 	public function rpp()
 	{
-				if(!$this->isLogin){
-			redirect('Auth');
-			die();
-		}
 
 		// $data['rpp'] = $this->m_rpp->getRpp();
 		$this->renderpage('rpp/rpp');
@@ -73,5 +73,14 @@ class RPP extends Core {
 		}
 		echo json_encode("yey");
 	}
+	public function cek()
+	{
+		$id_kelas = $this->input->post('kelas');
+		$id_matpel = $this->input->post('pelajaran');
+		$id_semester = $this->input->post('semester');
 
+		$result = $this->m_rpp->cek($id_kelas, $id_matpel, $id_semester);
+
+		echo json_encode($result);
+	}
 }
