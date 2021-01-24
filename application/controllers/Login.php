@@ -10,18 +10,29 @@ class Login extends Core{
 		
 		$this->form_validation->set_rules('email', 'email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('kode_captcha', 'Kode Captcha', 'required');
-		$this->form_validation->set_error_delimiters('<div style="border: 1px solid: #999999; background-color: #ffff99;">', '</div>');
+		$this->form_validation->set_rules('userCaptcha', 'Captcha', 'required|callback_check_captcha');
+         $userCaptcha = $this->input->post('userCaptcha');
+		
         
 
 		if($this->form_validation->run() == false){
 			$data['alert'] = '';
 			$data['title'] = "Login";
-			$cap = $this->buat_captcha();
-	        $data['cap_img'] = $cap['image'];
+			$random_number = substr(number_format(time() * rand(),0,'',''),0,6);
+		      // setting up captcha config
+		      $vals = array(
+		             'word' => $random_number,
+		             'img_path' => './captcha/',
+		             'img_url' => base_url().'captcha/',
+		             'img_width' => 140,
+		             'img_height' => 32,
+		             'expiration' => 7200
+		            );
+		      $data['captcha'] = create_captcha($vals);
+		      $this->session->set_userdata('captchaWord',$data['captcha']['word']);
 			$this->renderlog('login/login',$data);
 		}else{
-			$this->cek_captcha();
+			
 			if($this->user_model->doLogin())
 			{
 				$data = array(
@@ -32,42 +43,27 @@ class Login extends Core{
 
 				redirect('Dashboard');
 			}else {
-				$data['alert'] = 'gagal';
+				
 				$data['title'] = "Login";
 				$cap = $this->buat_captcha();
 	            $data['cap_img'] = $cap['image'];
 				$this->renderlog('login/login',$data);
+
 			}
 		}
 	}
 	
- public function buat_captcha(){
-        $vals = array(
-            'img_path' => 'captcha/',
-            'img_url' => base_url().'captcha/',
-            'font_path' => FCPATH . 'captcha/font/1.ttf',
-            'font_size' => 40,
-            'img_width' => '190',
-            'img_height' => 30,
-           'img_width' => '150',
-           'img_height' => 30,
-            'expiration' => 7200
-        );
-        $cap = create_captcha($vals);
-        return $cap;
-    }
-    
-    public function cek_captcha(){
-    	$cek = $this->input->post('kode_captcha');
-        if($cek === $this->session->userdata('kode_captcha')){
-            return TRUE;
-        }else{
-            $this->form_validation->set_message('cek_captcha', '%s yang anda input salah!');
-            return FALSE;
-        }
-    }
-
-    
+		 public function check_captcha($str){
+		    $word = $this->session->userdata('captchaWord');
+		    if(strcmp(strtoupper($str),strtoupper($word)) == 0){
+		      return true;
+		    }
+		    else{
+		      $this->form_validation->set_message('check_captcha', 'Please enter correct words!');
+		      return false;
+		    }
+		 }
+		    
     
 	public function logout()
 	{

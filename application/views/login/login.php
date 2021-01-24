@@ -1,9 +1,4 @@
-<?php 
-if ($alert == 'gagal') { ?>
-    <script type="text/javascript">
-        alert('Maaf kamu terlalu baik buatku :(')
-    </script>
-<?php }?>
+
 <div class="container">
 
         <!-- Outer Row -->
@@ -19,7 +14,9 @@ if ($alert == 'gagal') { ?>
                             <div class="col-lg-6">
                                 <div class="p-5 mt-3">
                                     <div class="text-center">
+
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        
                                     </div>
                                    
                                     <form class="user" method="post" action="">
@@ -37,11 +34,11 @@ if ($alert == 'gagal') { ?>
 
                                         <div class="form-group" >
                                            
-                                                   <span ><?=$cap_img;?></span>
-                                                <input  type="text" class="form-control form-control-user mt-2"
-                                                id="kode_captcha" placeholder="Captcha" name="kode_captcha" >
-                                                
-                                        </div>
+                                                <label for="captcha"><?php echo $captcha['image']; ?></label>
+                                                <br>
+                                                <input class="form-control form-control-user" type="text" autocomplete="off" name="userCaptcha" placeholder="Captcha" value="<?php if(!empty($userCaptcha)){ echo $userCaptcha;} ?>" />
+                                                <span class="required-server"><?php echo form_error('userCaptcha','<p style="color:#F83A18">','</p>'); ?></span> </div>
+                                        
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
