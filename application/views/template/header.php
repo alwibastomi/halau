@@ -405,26 +405,27 @@
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
-              
+
                 <!-- <li class="nav-item">
                 <a href="<?= site_url('L_Page') ?>" style="color: grey;" class="nav-link">Home</a>
-                </li> -->
-              <?php foreach ($nav as $lala) { ?>
-                <li class="nav-item">
-                <a href="<?= $lala->href ?>" style="color: grey;" class="nav-link"><?= $lala->menu ?></a>
-                </li>
-              <?php } ?>
-            </ul>
-          </div>
-        </nav>
-        <!-- End Navbar -->
-        <div class="sti" id="lala" style="bottom: 0;">
-          <div class="row">
-            <div class="col-md-6 text-right">
-              <p class="stiki">We’ll increase your conversions by by by by</p>
+              </li> -->
+              <?php foreach ($nav as $lala) {
+                if ($lala->pakai == '1') { ?>
+                  <li class="nav-item">
+                    <a href="<?= site_url('L_Page/Menu/'.$lala->menu) ?>" style="color: grey;" class="nav-link"><?= $lala->menu ?></a>
+                  </li>
+                <?php } } ?>
+              </ul>
             </div>
-            <div class="col-md-6 text-center">
-              <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a>
+          </nav>
+          <!-- End Navbar -->
+          <div class="sti" id="lala" style="bottom: 0;">
+            <div class="row">
+              <div class="col-md-6 text-right">
+                <p class="stiki">We’ll increase your conversions by by by by</p>
+              </div>
+              <div class="col-md-6 text-center">
+                <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a>
+              </div>
             </div>
           </div>
-        </div>

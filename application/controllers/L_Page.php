@@ -13,11 +13,13 @@ class L_page extends Core {
 		$this->renderpage('landing_page/index', $data);
 	}
 
-	public function Disclaimer()
+	public function Menu()
 	{
-		$data['title'] = 'Disclaimer';
-		
-		$this->renderpage('landing_page/disclaimer',$data);
+		$data['nav'] = $this->admin_model->getanu('menu');
+		$tea = $this->uri->segment(3);
+		$data['title'] = $tea;
+		$data['aaaa'] = $this->user_model->getDataA('menu', $tea);
+		$this->renderpage('landing_page/lili',$data);
 	}
 
 	public function Privacy()
