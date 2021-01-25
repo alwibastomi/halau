@@ -56,7 +56,7 @@ $date = date('Y-m-d');
             </a>
           </div>
           <h3 class="title text-left" style="color: black;"><b>Isi Detail RPP</b></h3>     
-          <form role="form" id="myform" method="post" enctype="multipart/form-data" style="color: black">   
+          <form action="<?= site_url('RPP/download/') ?>" role="form" id="myform" method="post" enctype="multipart/form-data" style="color: black">   
             <!-- nama  -->
             <div class="row">
               <div class="col-md-4">
@@ -320,6 +320,15 @@ $date = date('Y-m-d');
       $('#uy').click(function(l) {
 
         l.preventDefault();
+        var nama = $("input[name='nama']").val();
+        var sekolah = $("input[name='sekolah']").val();
+        var kep_sekolah = $("input[name='kep_sekolah']").val();
+        var matpel = $( "#pelajaran option:selected" ).text();
+        var sem = $( "#semester option:selected" ).text();
+
+        var tgl = $("input[name='tanggal_rpp']").val();
+        var tahun_ajaran = $( "#tahun_ajaran option:selected" ).text();
+        var kls = $( "#kelas option:selected" ).text();
         var kelas = $( "#kelas option:selected" ).val();
 
         var pelajaran = $( "#pelajaran option:selected" ).val();
@@ -339,7 +348,7 @@ $date = date('Y-m-d');
               if (z/4 == 1) {
                 list += '<div class="row">';
               }
-              list += '<div class="col-md-3"><a href="<?= site_url("RPP/download/'+hasil[i].id_detail+'") ?>" class="btn btn-primary"> Pertemuan '+x+' </a></div>';
+              list += '<div class="col-md-3"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Pertemuan '+x+' </a></div>';
 
               if (i == hasil.length - 1 || z%4 == 3) {
                 list += '</div>'

@@ -20,13 +20,20 @@ class RPP extends Core {
 	{
 		$data['id'] = $dat;
 		$data['title'] = 'RPP online';
+		$data['nav'] = $this->admin_model->getanu('menu');
+		$data['nama'] = $this->input->post('nama');
 		$this->renderpage('rpp/index', $data);
 	}
 	public function rpp()
 	{
 
-		// $data['rpp'] = $this->m_rpp->getRpp();
-		$this->renderpage('rpp/rpp');
+		$id_detail = $this->uri->segment(3);
+		$data['rpp'] = $this->m_rpp->get($id_detail);
+		$data['kelas'] = $this->m_rpp->getKrit('kelas', $this->m_rpp->get($id_detail)->id_kelas);
+		$data['tp'] = $this->m_rpp->getTp($this->m_rpp->get($id_detail)->id_tp);
+		$data['matpel'] = $this->m_rpp->getKrit('matpel', $this->m_rpp->get($id_detail)->id_matpel);
+		$data['semester'] = $this->m_rpp->getKrit('semester', $this->m_rpp->get($id_detail)->id_semester);
+		$this->renderpage('rpp/rpp', $data);
 	}
 	public function add_rpp()
 	{

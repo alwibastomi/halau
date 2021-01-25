@@ -1,7 +1,9 @@
 <?php 
 $date = date('Y-m-d');
 ?>
-
+<script type="text/javascript">
+  alert(<?= $this->uri->segment(4); ?>)
+</script>
 <!-- End Body Navbar -->
 <div class="container">
   <div class="row">
@@ -15,9 +17,10 @@ $date = date('Y-m-d');
     <div class="col-xl-8 order-xl-first mt-4">
       <div class="main_blog_details">
         <div class="row">
+          <h1><?= $this->uri->segment(4); ?></h1>
           <div class="col-md-12">
             <object data="<?= site_url('rpp/rpp/'.$id) ?>" type="application/pdf">
-              <iframe src="<?= site_url('rpp/rpp/'.$id) ?>" style="width: 100%; height: 500px;"></iframe>
+              <iframe src="<?= site_url('rpp/rpp/'.$id.'/'.$this->uri->segment(4).'/'.$this->uri->segment(5).'/'.$this->uri->segment(6)) ?>" style="width: 100%; height: 500px;"></iframe>
             </object>
           </div>
         </div>

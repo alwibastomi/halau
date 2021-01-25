@@ -46,6 +46,27 @@ public function cek($kelas, $matpel, $semester)
     $this->db->where('id_semester', $semester);
     return $this->db->get()->result();
   }
+  public function getTp($id)
+  {
+    $this->db->select("*");
+    $this->db->from("tp");
+    $this->db->where('id_tp', $id);
+    return $this->db->get()->result();
+  }
+  public function get($id_detail)
+  {
+    $this->db->select("*");
+    $this->db->from("detail_rpp");
+    $this->db->where('id_detail', $id_detail);
+    return $this->db->get()->row();
+  }  
+  public function getKrit($table, $id)
+  {
+    $this->db->select("*");
+    $this->db->from($table);
+    $this->db->where('id', $id);
+    return $this->db->get()->row();
+  }
   public function getCountDatarpp()
   {
     $this->db->select("count(id_detail) as total");
