@@ -48,10 +48,12 @@ class RPP extends Core {
 		
 
 		$data = array(
-			'id_kelas' => $this->input->post('id_kelas'),
-			'id_matpel' => $this->input->post('id_matpel'),
-			'pertemuan' => $this->input->post('pertemuan'),
+			'id_kelas' => $this->input->post('kelas'),
+			'id_matpel' => $this->input->post('pelajaran'),
+			'id_semester' => $this->input->post('semester'),
+			'pertemuan' => "Ke-".$this->input->post('pertemuan'),
 			'materi' => $this->input->post('materi'),
+			'id_tp' => $id_isi,
 			'kd' => $this->input->post('kd'),
 			'bab' => $this->input->post('bab'),
 			'halaman' => $this->input->post('halaman')
@@ -71,10 +73,11 @@ class RPP extends Core {
 		
 
 		for ($i=0; $i < count($isi) ; $i++) { 
+			$z = $i + 1;
 			$data1 = array(
 				'id_tp' => $id_isi,
 				'isi_tp' => $isi[$i],
-				'jumlah_tp' => count($isi)
+				'jenis' => "TP ".$z
 			);
 			$this->m_rpp->add_rpp('tp', $data1);
 		}

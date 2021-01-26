@@ -37,7 +37,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Semester</label>
             <div class="col-sm-10">
-              <select name="pelajaran" id="pelajaran" class="form-control" required>
+              <select name="semester" id="semester" class="form-control" required>
                       <option value="">- PILIH -</option>                      
                       <?php 
                       foreach ($semester as $key) { ?>

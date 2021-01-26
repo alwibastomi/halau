@@ -16,7 +16,7 @@ class M_rpp extends CI_Model
     $this->db->from($db);
     $this->db->order_by('id_tp', 'desc');
     $q = $this->db->get()->row();
-    return $q->id_isi;  
+    return $q->id_tp;  
   }
     public function add_rpp($table, $data)
   {
