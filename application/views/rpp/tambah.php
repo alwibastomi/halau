@@ -50,7 +50,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Pertemuan</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="Pertemuan"   name="pertemuan">
+              <input type="text" class="form-control" id="" placeholder="Pertemuan"   name="pertemuan" required>
             </div>
           </div>
 
@@ -58,7 +58,7 @@
             <label class="col-sm-2 col-form-label">TP</label>
             <div class="col-lg-10">
               <div class="input-group mb-3">
-                <input type="text" name="tp1" id="tp1" onblur="lololo('tp1')" class="form-control m-input" placeholder="TP 1" autocomplete="off">    
+                <input type="text" name="tp1" id="tp1" onblur="lololo('tp1')" class="form-control m-input" placeholder="TP 1" autocomplete="off" required>    
                 <button id="removeRow" type="button" class="btn btn-danger ml-2"><i class="fas fa-minus"></i></button>
                 <button id="addRow" type="button" class="btn btn-success ml-2"><i class="fas fa-plus"></i></button>
               </div>
@@ -68,25 +68,25 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Materi</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="Materi"   name="materi">
+              <input type="text" class="form-control" id="" placeholder="Materi"   name="materi" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">KD</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="kd"   name="kd">
+              <input type="text" class="form-control" id="" placeholder="kd"   name="kd" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Bab</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="Bab"   name="bab">
+              <input type="text" class="form-control" id="" placeholder="Bab"   name="bab" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Halaman</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="" placeholder="Halaman"   name="halaman">
+              <input type="text" class="form-control" id="" placeholder="Halaman"   name="halaman" required>
             </div>
           </div>
 

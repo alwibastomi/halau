@@ -31,6 +31,8 @@ class Artikel extends Core {
 		$this->form_validation->set_rules('header', 'header', 'required');
 		$this->form_validation->set_rules('isi', 'isi', 'required');
 
+		
+
 		$data['edit'] = false;
 
 		if($this->form_validation->run() == false){

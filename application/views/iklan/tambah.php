@@ -23,7 +23,7 @@
           <div class="form-group row">
             <label  class="col-sm-2 col-form-label">Script JS</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control"  placeholder="Script JS" name="script_js">
+              <input type="text" class="form-control"  placeholder="Script JS" name="script_js" required>
             </div>
           </div>
           <div class="form-group row">

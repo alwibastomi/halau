@@ -24,19 +24,19 @@ if ($alert == 'sukses') { ?>
           <div class="form-group row">
             <label  class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control"  placeholder="Email" name="email">
+              <input type="email" class="form-control"  placeholder="Email" name="email" required>
             </div>
           </div>
           <div class="form-group row">
             <label  class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control"  placeholder="Password" name="password">
+              <input type="password" class="form-control"  placeholder="Password" name="password" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nama" placeholder="Nama"   name="nama">
+              <input type="text" class="form-control" id="nama" placeholder="Nama"   name="nama" required>
             </div>
           </div>
           <div class="form-group row">

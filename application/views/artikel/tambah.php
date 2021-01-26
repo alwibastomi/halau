@@ -55,6 +55,7 @@ if ($edit) {
             </div>
           </div>
           <div class="form-group row">
+
             <label class="col-sm-2 col-form-label">Isi Artikel</label>
             <div class="col-sm-10">
               <textarea class="form-control" id="id_isi" value="" name="isi" required><?= $isi ?></textarea>
@@ -88,10 +89,17 @@ if ($edit) {
 </div>
 </div>
 <script>
-  CKEDITOR.replace('id_isi',{
-    height:300,
-    filebrowserUploadUrl:"upload.php",
+  var editor = CKEDITOR.replace( 'id_isi', {
+    language: 'en',
+    extraPlugins: 'notification',
+    height:300
+});
 
-  });
+editor.on( 'required', function( evt ) {
+    editor.showNotification( 'This field is required.', 'warning' );
+    evt.cancel();
+} );
   
+
+
 </script>

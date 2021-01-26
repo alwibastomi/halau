@@ -18,13 +18,13 @@
         <div class="form-group row">
           <label  class="col-sm-2 col-form-label">Menu</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control"  placeholder="Menu" name="menu">
+            <input type="text" class="form-control"  placeholder="Menu" name="menu" required>
           </div>
         </div>
         <div class="form-group row">
           <label  class="col-sm-2 col-form-label">Href</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control"  placeholder="Href" name="href">
+            <input required type="text" class="form-control"  placeholder="Href" name="href" >
           </div>
         </div>
         <div class="form-group row">

@@ -25,14 +25,14 @@ if ($alert == 'sukses') { ?>
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Script JS</label>
               <div class="col-sm-10">
-                <input type="hidden" class="form-control" id="id" value="<?= $iklan->id ?>"  name="id">
-                <input type="text" class="form-control" id="script_js" value="<?= $iklan->script_js ?>"  name="script_js">
+                <input type="hidden" class="form-control" id="id" value="<?= $iklan->id ?>"  name="id" >
+                <input type="text" class="form-control" id="script_js" value="<?= $iklan->script_js ?>"  name="script_js" required>
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Place</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="place" value="<?= $iklan->place ?>" name="place">
+                <input type="text" class="form-control" id="place" value="<?= $iklan->place ?>" name="place" required>
               </div>
             </div>
             <div class="form-group row">

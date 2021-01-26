@@ -26,13 +26,13 @@ if ($alert == 'sukses') { ?>
               <label class="col-sm-2 col-form-label">Menu</label>
               <div class="col-sm-10">
                 <input type="hidden" class="form-control" id="id" value="<?= $menu->id ?>"  name="id">
-                <input type="text" class="form-control" id="menu" value="<?= $menu->menu ?>"  name="menu">
+                <input type="text" class="form-control" id="menu" value="<?= $menu->menu ?>"  name="menu" required>
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">Href</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="href" value="<?= $menu->href ?>" name="href">
+                <input type="text" class="form-control" id="href" value="<?= $menu->href ?>" name="href" required>
               </div>
             </div>
             <div class="form-group row">
