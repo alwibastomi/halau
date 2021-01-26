@@ -33,6 +33,8 @@ class Menu extends Core {
 			$data = array(
 				'menu' => $this->input->post('menu'),
 				'href' => $this->input->post('href'),
+				'header' => $this->input->post('header'),
+				'isi' => $this->input->post('isi'),
 				'pakai' => $this->input->post('pakai')
 			);
 
@@ -72,6 +74,8 @@ class Menu extends Core {
 			$data = array(
 				'menu' => $this->input->post('menu'),
 				'href' => $this->input->post('href'),
+				'header' => $this->input->post('header'),
+				'isi' => $this->input->post('isi'),
 				'pakai' => $this->input->post('pakai')
 			);
 

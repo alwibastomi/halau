@@ -421,11 +421,17 @@
           <!-- End Navbar -->
           <div class="sti" id="lala" style="bottom: 0;">
             <div class="row">
-              <div class="col-md-6 text-right">
+              <!-- <div class="col-md-6 text-right">
                 <p class="stiki">We’ll increase your conversions by by by by</p>
-              </div>
-              <div class="col-md-6 text-center">
-                <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a>
+              </div> -->
+              <div class="col-md-12 text-center">
+                <!-- <a href="#" class="btn btn-warning"  style="width: 80%; color: black">CLAIM YOUR FREE AUDIT NOW</a> -->
+                <?php if (!empty($iklan5->place)) {
+                  echo $iklan5->script_js;
+                }else{
+                  echo "Ini iklan 1.5";
+                }
+                ?>
               </div>
             </div>
           </div>

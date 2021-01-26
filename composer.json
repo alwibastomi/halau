@@ -2,6 +2,7 @@
     "require": {
         "mpdf/mpdf": "^8.0",
         "phpoffice/phpword": "^0.17.0",
-        "ckeditor/ckeditor": "^4.15"
+        "ckeditor/ckeditor": "^4.15",
+        "phpoffice/phpspreadsheet": "^1.16"
     }
 }

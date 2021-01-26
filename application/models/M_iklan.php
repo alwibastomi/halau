@@ -28,6 +28,14 @@ class M_iklan extends CI_Model
     return $this->db->get()->result();
   }
 
+  public function getPlace($where)
+  {
+    $this->db->select("*");
+    $this->db->from('iklan_js');
+    $this->db->where('place', $where);
+    return $this->db->get()->result();
+  }
+
   public function getCountIklan()
   {
     $this->db->select("count(id) as total");

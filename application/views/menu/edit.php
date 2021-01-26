@@ -1,3 +1,4 @@
+<script src="<?= base_url('vendor/ckeditor/ckeditor/ckeditor.js') ?>"></script>
 <?php 
 if ($alert == 'sukses') { ?>
   <script type="text/javascript">
@@ -35,6 +36,18 @@ if ($alert == 'sukses') { ?>
               </div>
             </div>
             <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Header</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="header" value="<?= $menu->header ?>" name="header" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Isi Artikel</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="id_isi" value="" name="isi" required><?= $menu->isi ?></textarea>
+            </div>
+          </div>
+            <div class="form-group row">
             <label class="col-sm-2 col-form-label">Pakai</label>
             <div class="col-sm-10">
               <select class="form-control" name="pakai" style="border-radius: 0;">
@@ -62,3 +75,11 @@ if ($alert == 'sukses') { ?>
 </div>
 </div>
 </div>
+<script>
+  CKEDITOR.replace('id_isi',{
+    height:300,
+    filebrowserUploadUrl:"upload.php",
+
+  });
+  
+</script>

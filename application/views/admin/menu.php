@@ -21,6 +21,8 @@
             
             <th>Menu</th>
             <th>Href</th>
+            <th>Header</th>
+            <th>Isi</th>
             <th>Pakai</th>
             <th data-orderable="false">Aksi</th>
           </tr>

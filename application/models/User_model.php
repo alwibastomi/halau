@@ -36,11 +36,27 @@ class User_model extends CI_Model
     return $this->db->update('artikel', $data);
   }
 
+    public function getIklan()
+  {
+    $this->db->select("*");
+    $this->db->from("iklan_js");
+    return $this->db->get()->row();
+  }
+
   public function getData($table, $where)
   {
     $this->db->select("*");
     $this->db->from($table);
     $this->db->where('id', $where);
+    return $this->db->get()->row();
+  }
+
+    public function getDataIklan($table, $where)
+  {
+    $this->db->select("*");
+    $this->db->from($table);
+    $this->db->where('place', $where);
+    $this->db->where('pakai', 'Ya');
     return $this->db->get()->row();
   }
 

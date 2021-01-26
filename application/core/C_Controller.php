@@ -18,7 +18,11 @@ class Core extends CI_Controller {
 
 	public function renderpage($view, $data = array())
 	{
-
+		$data['iklan1'] = $this->user_model->getDataIklan('iklan_js', '1.1');
+		$data['iklan2'] = $this->user_model->getDataIklan('iklan_js', '1.2');
+		$data['iklan3'] = $this->user_model->getDataIklan('iklan_js', '1.3');
+		$data['iklan4'] = $this->user_model->getDataIklan('iklan_js', '1.4');
+		$data['iklan5'] = $this->user_model->getDataIklan('iklan_js', '1.5');
 		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');

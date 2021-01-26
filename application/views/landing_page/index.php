@@ -6,10 +6,17 @@ $date = date('Y-m-d');
 <div class="container">
   <div class="row">
     <div class="col-xl-4 order-xl-last">
-      <div class="kotak-iklan" id="lolo" style="">
-        <a href="" title="Pasang Iklan">
+      <div class="kotak-iklan" id="lolo">
+        <!-- <a href="" title="Pasang Iklan">
           <img alt="iklan banner" style="height: 100%;" src=""/>
-        </a>
+        </a> -->
+        <!-- IKLAN 1.1 -->
+        <?php if (!empty($iklan1->place)) {
+          echo $iklan1->script_js;
+        }else{
+          echo "Ini iklan 1.1";
+        }
+        ?>
       </div>
     </div>
     <div class="col-xl-8 order-xl-first mt-4">
@@ -51,9 +58,16 @@ $date = date('Y-m-d');
         </div>
         <div class="col-xl-8 order-xl-first">
           <div class="kotak-iklan" style="margin-top: 20px;">
-            <a href="" title="Pasang Iklan">
+            <!-- <a href="" title="Pasang Iklan">
               <img alt="iklan banner" src=""/>
-            </a>
+            </a> -->
+            <!-- IKLAN 1.2 -->
+            <?php if (!empty($iklan2->place)) {
+              echo $iklan2->script_js;
+            }else{
+              echo "Ini iklan 1.2";
+            }
+            ?>
           </div>
           <h3 class="title text-left" style="color: black;"><b>Isi Detail RPP</b></h3>     
           <form action="<?= site_url('RPP/download/') ?>" role="form" id="myform" method="post" enctype="multipart/form-data" style="color: black">   
@@ -221,9 +235,16 @@ $date = date('Y-m-d');
 
               <!-- iklan -->
               <div class="kotak-iklan mb-2">
-                <a href="" title="Pasang Iklan">
+                <!-- <a href="" title="Pasang Iklan">
                   <img alt="iklan banner" src=""/>
-                </a>
+                </a> -->
+                <!-- IKLAN 1.3 -->
+                <?php if (!empty($iklan3->place)) {
+                  echo $iklan3->script_js;
+                }else{
+                  echo "Ini iklan 1.3";
+                }
+                ?>
               </div>
               <!-- iklan -->
               <!-- end -->
@@ -238,9 +259,16 @@ $date = date('Y-m-d');
                 </div>
               </div>
               <div class="kotak-iklan mb-2">
-                <a href="" title="Pasang Iklan">
+                <!-- <a href="" title="Pasang Iklan">
                   <img alt="iklan banner" src=""/>
-                </a>
+                </a> -->
+                <!-- IKLAN 1.4 -->
+                <?php if (!empty($iklan4->place)) {
+                  echo $iklan4->script_js;
+                }else{
+                  echo "Ini iklan 1.4";
+                }
+                ?>
               </div>
               <div class="row">
                 <div class="col-md-12">
@@ -354,7 +382,7 @@ $date = date('Y-m-d');
                 list += '</div>'
               }
 
-            z = z+1;
+              z = z+1;
             }
             document.getElementById('list').innerHTML = list;
           }

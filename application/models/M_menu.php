@@ -86,11 +86,14 @@ class M_menu extends CI_Model
         $pil = 'Tidak';
       }
       $btn = '<a href="'.site_url('Menu/edit/'.$val->id).'" class="btn btn-primary " style="text-align: center;" data-toggle="tooltip" title="Edit">Edit</i></a>';
-
+      $sub = substr($val->isi,3,10);
+      
       $output['data'][] = array(
 
         $val->menu,
         $val->href,
+        $val->header,
+        $sub,
         $pil,
         $btn
       );
