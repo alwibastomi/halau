@@ -148,7 +148,7 @@
             width: 16.5%;
             margin-top: 5%;
             transition: all 1s ;
-            background-color: #f5fffe!important;
+            background-color: white!important;
 
         }
         
@@ -188,6 +188,16 @@
                                 <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
 
                             <p class="message-i" style="">Sukses Hapus Data</p>
+                          </div>
+                          
+                        </div>
+                </div>
+<?php } else if($this->session->flashdata('login')){ ?>
+    <div class="toast d-flex align-items-center text-black bg-light border-0 mb-5 mr-4" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-body message-j">
+                                <i class="fas fa-check cek"></i><strong id="message-j">web kuu</strong>
+
+                            <p class="message-i" style="">Berhasil Login</p>
                           </div>
                           
                         </div>

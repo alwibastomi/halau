@@ -76,11 +76,7 @@
             <div class="sidebar-heading">
                 RPP ONLINE
             </div>
-             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-file"></i>
-                    <span>Template RPP</span></a>
-            </li>
+             
 
             <!-- Nav Item - Charts -->
             <li class="nav-item <?php if($this->uri->segment(1)=="Datarpp"){echo "active";}?>">

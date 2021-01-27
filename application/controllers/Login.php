@@ -47,9 +47,11 @@ class Login extends Core{
 					'date_time' => date('Y-m-d H:i:s')
 				);
 				$this->user_model->addData('activity_log', $data);
-
+				$this->session->set_flashdata('login','login');
 
 				redirect('Dashboard');
+        
+
 			}else {
 
 				$data['title'] = "Login";
