@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="card">
 
   <h3 class="mt-3 ml-2">Tambah Data</h3>
@@ -66,6 +67,7 @@
     </div>    
 </div>
 </form>
+</div>
 </div>
 </div>
 </div>

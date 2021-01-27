@@ -113,8 +113,12 @@ class Datarpp extends Core {
 					}
 					$this->m_rpp->add_rpp('tp', $data1);
 				}
-				$data['alert'] = 'sukses';
+				$this->session->set_flashdata('pesan','pesan');
+				redirect('Datarpp');
+				
 			}
+
+			
 		}
 		$this->renderadm('rpp/Upload',$data);
 

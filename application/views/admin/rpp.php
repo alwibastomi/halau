@@ -14,7 +14,8 @@
       <h3 class="text-center">DATA RPP</h3>
       
       <a href="<?= site_url('Datarpp/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
-      <a href="<?= site_url('Datarpp/upload') ?>" class="btn btn-success mb-3">Upload Data<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
+      <a href="<?= site_url('Datarpp/upload') ?>" class="btn btn-info mb-3" style="border-radius: 0 !important;
+        border: none;">Upload Data<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
       
       
       <table class="table tablehead datatable-ku" data-func="datarpp" data-meth="datarpp_datatable" style="width:100%">
