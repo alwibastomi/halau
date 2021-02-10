@@ -41,10 +41,6 @@ class Datarpp extends Core {
 	}
 	public function Upload(){
 
-		if(!$this->isLogin){
-			redirect('Auth');
-			die();
-		}
 		$data['title'] = 'Upload Rpp';
 		$data['kelas'] = $this->admin_model->getAllKelas();
 		$data['matpel'] = $this->admin_model->getAllMatpel();
@@ -110,8 +106,9 @@ class Datarpp extends Core {
 							'isi_tp' => $yowes,
 							'jenis' => $sheetData[0][$z]
 						);
+
+						$this->m_rpp->add_rpp('tp', $data1);
 					}
-					$this->m_rpp->add_rpp('tp', $data1);
 				}
 				$this->session->set_flashdata('pesan','pesan');
 				redirect('Datarpp');
@@ -128,10 +125,46 @@ class Datarpp extends Core {
 
 	public function datarpp_datatable()
 	{
+
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
 		$datarpp = $this->m_rpp->datatableDatarpp();
 		echo json_encode($datarpp);
 		die();
 	}
 
+	public function Hapus(){
 
+		$data['title'] = 'Upload Rpp';
+		$data['kelas'] = $this->admin_model->getAllKelas();
+		$data['matpel'] = $this->admin_model->getAllMatpel();
+		$data['semester'] = $this->admin_model->getAllSemester();
+
+		$this->form_validation->set_rules('kelas', 'kelas', 'required');
+		$this->form_validation->set_rules('pelajaran', 'pelajaran', 'required');
+		$this->form_validation->set_rules('semester', 'semester', 'required');
+
+		if($this->form_validation->run() == false){
+			$data['alert'] = '';
+		}else{
+			
+
+			$id_kelas = $this->input->post('kelas');
+			$id_matpel = $this->input->post('pelajaran');
+			$id_semester = $this->input->post('semester');
+
+			
+			$this->db->delete('tp', array('id_tp' => $this->m_rpp->get($id_detail)->id_tp));
+			$this->db->delete("detail_rpp", array('id_kelas' => $id_kelas, 'id_matpel' => $id_matpel, 'id_semester' => $id_semester));
+
+
+			$this->session->set_flashdata('hapus_pesan','pesan');
+			redirect('Datarpp');
+
+		}
+
+		$this->renderadm('rpp/Hapus',$data);
+	}
 }	

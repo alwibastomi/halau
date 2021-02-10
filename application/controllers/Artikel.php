@@ -12,7 +12,8 @@ class Artikel extends Core {
 
 	public function index()
 	{
-		if(!$this->isLogin){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
 			redirect('Auth');
 			die();
 		}
@@ -23,8 +24,9 @@ class Artikel extends Core {
 	}
 
 	public function tambah(){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 
@@ -50,7 +52,7 @@ class Artikel extends Core {
 			);
 
 			if ($this->input->post('pakai') == "1") {
-			$this->user_model->editya();
+				$this->user_model->editya();
 			}
 
 			$this->user_model->addData('activity_log', $data1);
@@ -94,7 +96,7 @@ class Artikel extends Core {
 			);
 
 			if ($this->input->post('pakai') == "1") {
-			$this->user_model->editya();
+				$this->user_model->editya();
 			}
 			$this->user_model->addData('activity_log', $data1);
 
@@ -107,8 +109,9 @@ class Artikel extends Core {
 	}
 
 	public function hapus($id){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 		$ha = $this->user_model->getData('artikel', $id);
@@ -123,12 +126,17 @@ class Artikel extends Core {
 
 		$this->db->delete("artikel", array('id' => $id));
 		$data['alert'] = 'sukses';
-			$this->session->set_flashdata('hapus_pesan','pesan');
+		$this->session->set_flashdata('hapus_pesan','pesan');
 		$this->renderadm('admin/artikel', $data);
 	}
 
 	public function artikel_datatable()
 	{
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
+			die();
+		}
 		$artikel = $this->m_artikel->datatableArtikel();
 		echo json_encode($artikel);
 		die();

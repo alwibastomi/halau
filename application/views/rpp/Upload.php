@@ -11,7 +11,7 @@
       <div class="col-md-7">
         <form action="" id="uwu" method="post" enctype="multipart/form-data">
           <div class="form-group row">
-            <center><a href="<?= site_url('Template/DataRpp.xlsx') ?>" class="btn btn-success ">Download Template</a></center>
+            <center><a href="<?= site_url('RPP/Document_read') ?>" class="btn btn-success ">Download Template</a></center>
 
         </div>
                   <div class="form-group row">

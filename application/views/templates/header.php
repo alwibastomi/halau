@@ -57,8 +57,8 @@
 
     <style type="text/css">
         .bg-gradient-primary{
-         background-color: #253137 !important;
-         background-image: linear-gradient(180deg, #253137 10%, #253137 100%);
+         background-color: #445963 !important;
+         background-image: linear-gradient(180deg, #445963 10%, #253137 100%);
          background-size: cover;
      }
      .tablehead{

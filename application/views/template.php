@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Datasoft</title>
+  <title>RPP</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="http://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/css/vendors/iconfonts/puse-icons-feather/feather.css">

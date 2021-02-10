@@ -105,6 +105,63 @@ class M_iklan extends CI_Model
     }
     return $output;
   }
+ public function datatableIklan1()
+  {
+    $array = array("id","script_js", "place");
+    $start = $this->_post('start');
+    $offset = $this->_post('length');
+    if ($start != null && $offset != null) {
+      $this->db->limit($offset,$start);
+    }
 
+    $search = $this->_post('search');
+    if($search['value'] != ''){
+      $key = $search['value'];
+      $this->db->like('id', $key);
+      $this->db->or_like('script_js', $key);
+      $this->db->or_like('place', $key);
+      $this->db->or_like('pakai', $key);
+    }
+
+    $order = $this->_post('order');
+    $column = isset($order[0]['column'])?$order[0]['column']:-1;
+    if($column >= 0 && $column < count($array)){
+      $ord = $array[$column];
+      $by = $order[0]['dir'];
+      $this->db->order_by($ord , $by);
+    }
+
+    $this->db->select("SQL_CALC_FOUND_ROWS *" ,FALSE);
+    $this->db->from("iklan_js");
+    $this->db->order_by("id", "DESC");
+    $sql = $this->db->get();
+    $q = $sql->result();
+    $this->db->select("FOUND_ROWS() AS total_row");
+    $row = $this->db->get()->row();
+
+    $sEcho = $this->_post('draw');
+    $getCountAll = $this->getCountIklan();
+    $output = array(
+      "draw" => intval($sEcho),
+      "recordsTotal" => $getCountAll,
+      "recordsFiltered" => $row->total_row,
+      "data" => array()
+    );
+
+    foreach ($q as $val) {
+      if ($val->pakai == 1) {
+        $pil = 'Ya';
+      }else{
+        $pil = 'Tidak';
+      }
+      $output['data'][] = array(
+
+        $val->script_js,
+        $val->place,
+        $pil
+      );
+    }
+    return $output;
+  }
   
 }

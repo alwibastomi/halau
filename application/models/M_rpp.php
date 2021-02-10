@@ -128,12 +128,8 @@ public function cek($kelas, $matpel, $semester)
 
     foreach ($q as $val) {
       
-      $btn = ' <a href="'.site_url('Datarpp/edit/'.$val->id_detail).'" class="btn btn-primary" style="text-align: center; padding:4px 6px 4px 6px;"  data-toggle="tooltip" title="Edit" ><i class="fas fa-edit"></i></i></a>
-      <a href="'.site_url('Datarpp/detail/'.$val->id_detail).'" class="btn btn-success " style="text-align: center; padding:4px 6px 4px 6px;"  title="Detail"><i class="fas fa-info-circle"></i></a>
-      <a href="'.site_url('Datarpp/hapus/'.$val->id_detail).'" class="btn btn-danger mt-1" style="text-align: center; padding:4px 6px 4px 6px;"  title="Delete"><i class="fas fa-trash"></i></a>';
 
       $output['data'][] = array(
-        $btn,
         $val->kelas,
         $val->nama_matpel,
         $val->semester,

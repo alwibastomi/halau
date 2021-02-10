@@ -11,7 +11,8 @@ class Iklan extends Core {
 
 	public function index()
 	{
-		if(!$this->isLogin){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
 			redirect('Auth');
 			die();
 		}
@@ -20,8 +21,9 @@ class Iklan extends Core {
 		$this->renderadm('admin/iklan', $data);
 	}
 	public function tambah(){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 
@@ -59,7 +61,8 @@ class Iklan extends Core {
 	}
 
 	public function edit($id){
-		if(!$this->isLogin){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
 			redirect('Auth');
 			die();
 		}
@@ -97,7 +100,23 @@ class Iklan extends Core {
 
 	public function iklan_datatable()
 	{
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
+			die();
+		}
 		$iklan = $this->m_iklan->datatableIklan();
+		echo json_encode($iklan);
+		die();
+	}
+		public function iklan_datatable1()
+	{
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
+			die();
+		}
+		$iklan = $this->m_iklan->datatableIklan1();
 		echo json_encode($iklan);
 		die();
 	}

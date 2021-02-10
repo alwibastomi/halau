@@ -1,9 +1,16 @@
 <?php 
 $date = date('Y-m-d');
 ?>
-<script type="text/javascript">
-  alert(<?= $this->uri->segment(4); ?>)
-</script>
+
+<style>
+   @media screen and (max-width:780px){
+      #img{
+        padding-left: 1%;
+        width: 100%;
+        height: 80px;
+      }
+   }
+</style>
 <!-- End Body Navbar -->
 <div class="container">
   <div class="row">
@@ -17,11 +24,12 @@ $date = date('Y-m-d');
     <div class="col-xl-8 order-xl-first mt-4">
       <div class="main_blog_details">
         <div class="row">
-          <h1><?= $this->uri->segment(4); ?></h1>
+          <center><h1>Download File</h1></center>
+          <h3>Untuk Mengunduh file pdf silahkan klik pada pojok kanan atas tampilan preview</h3>
+          <img id="img" src="<?= site_url('file download.jpg') ?>" alt="" width="700" height="200" >
+          <h3>Tampilan Preview RPP</h3>
           <div class="col-md-12">
-            <object data="<?= site_url('rpp/rpp/'.$id) ?>" type="application/pdf">
-              <iframe src="<?= site_url('rpp/rpp/'.$id.'/'.$this->uri->segment(4).'/'.$this->uri->segment(5).'/'.$this->uri->segment(6)) ?>" style="width: 100%; height: 500px;"></iframe>
-            </object>
+              <iframe src="<?= site_url('RPP/rpp/'.$id.'/'.$this->uri->segment(4).'/'.$this->uri->segment(5).'/'.$this->uri->segment(6)) ?>" style="width: 100%; height: 500px;"></iframe>
           </div>
         </div>
 

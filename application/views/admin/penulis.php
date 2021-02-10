@@ -22,7 +22,7 @@ if ($alert == 'sukses') { ?>
       <table class="table tablehead datatable-ku" data-func="penulis" data-meth="penulis_datatable" style="width:100%">
         <thead>
           <tr class="thead">
-            <th data-orderable="false">No</th>
+            <th data-orderable="false">Email</th>
             <th>Nama</th>
             <th>Level</th>
             <th data-orderable="false">Aksi</th>

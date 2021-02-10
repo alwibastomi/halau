@@ -75,7 +75,7 @@
 
   function myFunction() {
     var winTop = $(window).scrollTop();
-    if(winTop >= 1350){
+    if(winTop >= 500){
       header.classList.add("papa");
     } else {
       header.classList.remove("papa");

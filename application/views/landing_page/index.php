@@ -1,7 +1,9 @@
 <?php 
 $date = date('Y-m-d');
 ?>
-
+ 
+                   
+       
 <!-- End Body Navbar -->
 <div class="container">
   <div class="row">
@@ -253,7 +255,7 @@ $date = date('Y-m-d');
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                   <button class="btn btn-ijo btn-round" id="uy">Generate</button>
 
                 </div>
@@ -272,7 +274,7 @@ $date = date('Y-m-d');
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <center><h3>List Download RPP</h3></center>
+                  <center><h3>Download RPP Pertemuan</h3></center>
                 </div>
               </div>
               <div class="row">
@@ -343,6 +345,18 @@ $date = date('Y-m-d');
     <script src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+    <style>
+      @media screen and (max-width:560px){
+        #per{
+          width: auto;
+          margin: 2px;
+          padding-left: 13%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+        }
+        }
+    </style>
     <!-- end alur  -->
     <script type="text/javascript">
       $('#uy').click(function(l) {
@@ -356,6 +370,7 @@ $date = date('Y-m-d');
 
         var tgl = $("input[name='tanggal_rpp']").val();
         var tahun_ajaran = $( "#tahun_ajaran option:selected" ).text();
+        var th = $( "#tahun_ajaran option:selected" ).val();
         var kls = $( "#kelas option:selected" ).text();
         var kelas = $( "#kelas option:selected" ).val();
 
@@ -363,20 +378,27 @@ $date = date('Y-m-d');
 
         var semester = $( "#semester option:selected" ).val();
 
-        $.ajax({
+        if (nama == "" || sekolah == "" || kep_sekolah == "" || $("#kelas")[0].selectedIndex <= 0 || $("#pelajaran")[0].selectedIndex <= 0 || $("#tahun_ajaran")[0].selectedIndex <= 0 || $("#semester")[0].selectedIndex <= 0) {
+       alert("Data masih ada yang kosong")
+
+        }else {
+           $.ajax({
           type:'POST',
           data:'kelas='+kelas+'&pelajaran='+pelajaran+'&semester='+semester,
           url:'<?= site_url('RPP/cek') ?>',
           dataType:'JSON',
           success: function(hasil){
+            
+             
             var z = 4;
             var list = '';
             for (var i = 0; i < hasil.length; i++) {
               var x = i+1;
-              if (z/4 == 1) {
-                list += '<div class="row">';
+              if (z%4 == 0) {
+
+                list += '<br><div class="row">';
               }
-              list += '<div class="col-md-3"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Pertemuan '+x+' </a></div>';
+              list += '<div class="col-sm-3" id="per"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Pertemuan '+x+' </a></div>';
 
               if (i == hasil.length - 1 || z%4 == 3) {
                 list += '</div>'
@@ -387,6 +409,10 @@ $date = date('Y-m-d');
             document.getElementById('list').innerHTML = list;
           }
         });    
+          
+        }
+
+
         
 
 

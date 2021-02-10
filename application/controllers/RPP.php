@@ -12,7 +12,7 @@ class RPP extends Core {
 		$this->level = $this->session->userdata('level');
 	}
 
-	public function index($dat)
+	public function index()
 	{
 
 	}
@@ -24,6 +24,18 @@ class RPP extends Core {
 		$data['nama'] = $this->input->post('nama');
 		$this->renderpage('rpp/index', $data);
 	}
+	public function Document_read()
+	{
+
+		$this->load->helper('download');
+		if(!$this->isLogin){
+			redirect('Auth');
+			die();
+		}
+		$file = './Template/Excel.xlsx';
+		force_download($file, NULL);
+
+	}
 	public function rpp()
 	{
 
@@ -33,7 +45,7 @@ class RPP extends Core {
 		$data['tp'] = $this->m_rpp->getTp($this->m_rpp->get($id_detail)->id_tp);
 		$data['matpel'] = $this->m_rpp->getKrit('matpel', $this->m_rpp->get($id_detail)->id_matpel);
 		$data['semester'] = $this->m_rpp->getKrit('semester', $this->m_rpp->get($id_detail)->id_semester);
-		$this->renderpage('rpp/rpp', $data);
+		$this->load->view('rpp/rpp', $data);
 	}
 	public function add_rpp()
 	{

@@ -70,12 +70,10 @@ $content .= "</ol>
 </body>
 </html>
 ";
-require_once(APPPATH.'libraries\mpdf_v8.0.3-master\vendor\autoload.php'); 
+require_once(APPPATH.'libraries/mpdf_v8.0.3-master/vendor/autoload.php'); 
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->AddPage("P","","","","","15","15","15","15","","","","","","","","","","","","A4");
 $mpdf->WriteHTML($content);
-$mpdf->Output();
-ob_stop();
-Hehehe();
+$mpdf->Output("PERTEMUAN".$rpp->pertemuan.".pdf", 'I');
 
 ?>

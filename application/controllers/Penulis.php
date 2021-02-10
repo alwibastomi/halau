@@ -11,8 +11,9 @@ class Penulis extends Core {
 
 	public function index()
 	{
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 		$data['alert'] = '';
@@ -22,8 +23,9 @@ class Penulis extends Core {
 	}
 
 	public function tambah(){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 
@@ -58,8 +60,9 @@ class Penulis extends Core {
 	}
 
 	public function hapus($email){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 		$ha = $this->user_model->getDataAc('user', $email);
@@ -80,8 +83,9 @@ class Penulis extends Core {
 
 	public function penulis_datatable()
 	{
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 		$penulis = $this->m_penulis->datatablePenulis();

@@ -11,7 +11,8 @@ class Menu extends Core {
 
 	public function index()
 	{
-		if(!$this->isLogin){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
 			redirect('Auth');
 			die();
 		}
@@ -20,8 +21,9 @@ class Menu extends Core {
 		$this->renderadm('admin/menu', $data);
 	}
 	public function tambah(){
-		if(!$this->isLogin){
-			redirect('Login');
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
 			die();
 		}
 
@@ -54,7 +56,8 @@ class Menu extends Core {
 	}
 
 	public function edit($id){
-		if(!$this->isLogin){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
 			redirect('Auth');
 			die();
 		}
@@ -96,6 +99,11 @@ class Menu extends Core {
 
 	public function menu_datatable()
 	{
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
+			die();
+		}
 		$menu = $this->m_menu->datatableMenu();
 		echo json_encode($menu);
 		die();

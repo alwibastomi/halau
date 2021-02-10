@@ -1,3 +1,4 @@
+ <script src="<?= base_url('vendor/ckeditor/ckeditor/ckeditor.js') ?>"></script>
  <?php 
  if ($alert == 'enek') { ?>
   <script type="text/javascript">
@@ -23,7 +24,7 @@
           <div class="form-group row">
             <label  class="col-sm-2 col-form-label">Script JS</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control"  placeholder="Script JS" name="script_js" required>
+              <textarea type="text" class="form-control"  placeholder="Script JS" name="script_js" required></textarea>
             </div>
           </div>
           <div class="form-group row">
@@ -57,9 +58,26 @@
     </form>
   </div>
 </div>
-<p> *nb : Place 1.1 Landing Page Kanan</p>
-<p> Place 1.1 Landing Page Kanan</p>
+<p style="font-size: 12px; color: black;"> *nb : Place 1.1 Landing Page Sidebar Kanan</p>
+<p style="font-size: 12px; color: black;"> *nb : Place 1.2 Landing Page Bawah Artikel</p>
+<p style="font-size: 12px; color: black;"> *nb : Place 1.3 Landing Page Atas Tombol Generate</p>
+<p style="font-size: 12px; color: black;"> *nb : Place 1.4 Landing Page Bawah Tombol Generate</p>
+<p style="font-size: 12px; color: black;"> *nb : Place 1.5 Landing Page Sticky Bawah</p>
+
+<p style="font-size: 12px; color: black;"> *nb : Place 1.6 Download Sidebar Kanan</p>
 </div>
 </div>
 </div>
 </div>
+<script>
+   var editor = CKEDITOR.replace( 'script_js', {
+    language: 'en',
+    extraPlugins: 'notification',
+    height:300
+});
+
+editor.on( 'required', function( evt ) {
+    editor.showNotification( 'This field is required.', 'warning' );
+    evt.cancel();
+} );
+</script>

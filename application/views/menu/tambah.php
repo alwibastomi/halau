@@ -62,10 +62,14 @@
 </div>
 </div>
 <script>
-  CKEDITOR.replace('id_isi',{
-    height:300,
-    filebrowserUploadUrl:"upload.php",
+ var editor = CKEDITOR.replace( 'id_isi', {
+    language: 'en',
+    extraPlugins: 'notification',
+    height:300
+});
 
-  });
-  
+editor.on( 'required', function( evt ) {
+    editor.showNotification( 'This field is required.', 'warning' );
+    evt.cancel();
+} );
 </script>

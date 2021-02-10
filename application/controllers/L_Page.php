@@ -11,6 +11,7 @@ class L_page extends Core {
 		$data['matpel'] = $this->admin_model->getAllMatpel();
 		$data['semester'] = $this->admin_model->getAllSemester();
 		$this->renderpage('landing_page/index', $data);
+		$this->session->set_flashdata('pesan','pesan');
 	}
 
 	public function Menu()
