@@ -101,8 +101,13 @@ class RPP extends Core {
 		$id_matpel = $this->input->post('pelajaran');
 		$id_semester = $this->input->post('semester');
 
-		$result = $this->m_rpp->cek($id_kelas, $id_matpel, $id_semester);
+		
 
+		if (!empty($this->m_rpp->cek($id_kelas, $id_matpel, $id_semester))) {
+			$result = $this->m_rpp->cek($id_kelas, $id_matpel, $id_semester);
+		}else {
+			$result = "kosong";
+		}
 		echo json_encode($result);
 	}
 }

@@ -1,9 +1,9 @@
 <?php 
 $date = date('Y-m-d');
 ?>
- 
-                   
-       
+
+
+
 <!-- End Body Navbar -->
 <div class="container">
   <div class="row">
@@ -273,10 +273,11 @@ $date = date('Y-m-d');
                 ?>
               </div>
               <div class="row">
-                <div class="col-md-12">
-                  <center><h3>Download RPP Pertemuan</h3></center>
+                <div class="col-md-12" style="background: #ece507;">
+                  <center><h3><b>Download RPP Dibawah Ini</b></h3></center>
                 </div>
               </div>
+              <br>
               <div class="row">
                 <div class="col-md-12" id="list">
 
@@ -351,11 +352,12 @@ $date = date('Y-m-d');
           width: auto;
           margin: 2px;
           padding-left: 13%;
+          padding-right: : 10%;
           position: relative;
           display: flex;
           justify-content: center;
         }
-        }
+      }
     </style>
     <!-- end alur  -->
     <script type="text/javascript">
@@ -379,43 +381,49 @@ $date = date('Y-m-d');
         var semester = $( "#semester option:selected" ).val();
 
         if (nama == "" || sekolah == "" || kep_sekolah == "" || $("#kelas")[0].selectedIndex <= 0 || $("#pelajaran")[0].selectedIndex <= 0 || $("#tahun_ajaran")[0].selectedIndex <= 0 || $("#semester")[0].selectedIndex <= 0) {
-       alert("Data masih ada yang kosong")
+         alert("Data masih ada yang kosong")
 
-        }else {
-           $.ajax({
+       }else {
+         $.ajax({
           type:'POST',
           data:'kelas='+kelas+'&pelajaran='+pelajaran+'&semester='+semester,
           url:'<?= site_url('RPP/cek') ?>',
           dataType:'JSON',
           success: function(hasil){
-            
-             
-            var z = 4;
-            var list = '';
-            for (var i = 0; i < hasil.length; i++) {
-              var x = i+1;
-              if (z%4 == 0) {
+            if (hasil == "kosong") {
 
-                list += '<br><div class="row">';
+              alert("Data RPP Tidak Ada")
+            }else {
+
+              var z = 4;
+              var list = '';
+              for (var i = 0; i < hasil.length; i++) {
+                var x = i+1;
+                if (z%4 == 0) {
+
+                  list += '<br><div class="row">';
+                }
+                list += '<div class="col-sm-3" id="per"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Download RPP Pertemuan '+x+' </a></div><br>';
+
+                if (i == hasil.length - 1 || z%4 == 3) {
+                  list += '</div><br><br>'
+                }
+
+                z = z+1;
               }
-              list += '<div class="col-sm-3" id="per"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Pertemuan '+x+' </a></div>';
-
-              if (i == hasil.length - 1 || z%4 == 3) {
-                list += '</div>'
-              }
-
-              z = z+1;
+              document.getElementById('list').innerHTML = list;
+              alert("BERHASIL, Download RPP dibawah...")
             }
-            document.getElementById('list').innerHTML = list;
+            
           }
         });    
-          
-        }
+         
+       }
 
 
-        
+       
 
 
-        /* Act on the event */
-      });
-    </script>
+       /* Act on the event */
+     });
+   </script>
