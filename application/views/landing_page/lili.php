@@ -23,16 +23,8 @@ $date = date('Y-m-d');
       <div class="main_blog_details">
         <!-- <img class="img-fluid" src="<?= site_url('images/artikel/artikel.jpg') ?>" alt=""> -->
         <h4><b><?= $aaaa->header ?></b></h4>
-        <div class="user_details" style="margin-top: 20px;">
-          <div class="float-left">
-            <a class="btn btn-primary" style="border-radius: 40px; padding: 2px 10px;" href="#"><i class="fa fa-thumbs-up"></i></a>
-          </div>
-          <div class="float-right">
-            <div class="media">
-              <div class="media-body">
-                <p>Januari 24, 2021</p>
-              </div>
-            </div>
+        <div class="user_details" style="margin-top: 0px;">
+          
           </div>
         </div>
         <p></p><?= $aaaa->isi ?><p></p>

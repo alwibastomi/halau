@@ -27,6 +27,9 @@ $date = date('Y-m-d');
           <center><h1>Download File</h1></center>
           <h3>Untuk Mengunduh file pdf silahkan klik pada pojok kanan atas tampilan preview</h3>
           <img id="img" src="<?= site_url('file download.jpg') ?>" alt="" width="700" height="200" >
+          <h3>Untuk print file pdf silahkan klik pada pojok kanan atas tampilan preview</h3>
+          <img id="img" src="<?= site_url('file print.jpg') ?>" alt="" width="700" height="200" >
+          <p style="font-style: bold; color: red;" >Cetak Menggunakan Kertas Legal</p>
           <h3>Tampilan Preview RPP</h3>
           <div class="col-md-12">
               <iframe src="<?= site_url('RPP/rpp/'.$id.'/'.$this->uri->segment(4).'/'.$this->uri->segment(5).'/'.$this->uri->segment(6)) ?>" style="width: 100%; height: 500px;"></iframe>

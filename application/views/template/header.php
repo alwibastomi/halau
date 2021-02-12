@@ -376,6 +376,11 @@
         margin-top: 20px;
         position: fixed;
       }
+      @media screen and (max-width: 320px){
+        .navbar-toggler{
+          padding-right: 50%!important;
+        }
+      }
 
       /*.navbar-brand:hover{
         opacity: 0.6;

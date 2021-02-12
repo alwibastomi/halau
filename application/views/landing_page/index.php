@@ -25,16 +25,9 @@ $date = date('Y-m-d');
       <div class="main_blog_details">
         <!-- <img class="img-fluid" src="<?= site_url('images/artikel/artikel.jpg') ?>" alt=""> -->
         <h4><b><?= $aaaa->header ?></b></h4>
-        <div class="user_details" style="margin-top: 20px;">
-          <div class="float-left">
-            <a class="btn btn-primary" style="border-radius: 40px; padding: 2px 10px;" href="#"><i class="fa fa-thumbs-up"></i></a>
-          </div>
-          <div class="float-right">
-            <div class="media">
-              <div class="media-body">
-                <p>Januari 24, 2021</p>
-              </div>
-            </div>
+        <div class="user_details" style="margin-top: 0px;">
+          
+          
           </div>
         </div>
         <p></p>
@@ -295,7 +288,7 @@ $date = date('Y-m-d');
     <!-- alur  -->
     <div class="container" id="alur">
       <div class="row">
-        <div class="col-md-12 mt-5 text-center">
+        <div class="col-md-12 mt-2 text-center">
           <h2 class="title text-center">Panduan Penggunaan</h2>
         </div>
       </div>
@@ -347,16 +340,30 @@ $date = date('Y-m-d');
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
     <style>
-      @media screen and (max-width:560px){
+    #ijo{
+          background-color: #006400!important;
+          border:none;
+        }
+      @media screen and (max-width:570px){
         #per{
           width: auto;
+          /*width: auto;
           margin: 2px;
           padding-left: 13%;
           padding-right: : 10%;
           position: relative;
           display: flex;
-          justify-content: center;
+          justify-content: center;*/
+          padding: 8px;
         }
+         @media screen and (max-width:450px){
+          #per{
+            width: auto;
+            
+          }
+         }
+        
+
       }
     </style>
     <!-- end alur  -->
@@ -403,7 +410,7 @@ $date = date('Y-m-d');
 
                   list += '<br><div class="row">';
                 }
-                list += '<div class="col-sm-3" id="per"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Download RPP Pertemuan '+x+' </a></div><br>';
+                list += '<div class="col-sm-3" id="per"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" id="ijo" target="_blank" > Download RPP Pertemuan '+x+' </a></div><br>';
 
                 if (i == hasil.length - 1 || z%4 == 3) {
                   list += '</div><br><br>'
